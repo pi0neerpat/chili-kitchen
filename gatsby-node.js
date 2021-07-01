@@ -3,7 +3,7 @@ const { postsPerPage } = require(`./src/utils/siteConfig`);
 const { paginate } = require(`gatsby-awesome-pagination`);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-    const { createNodeField } = actions;
+    const { createNodeField, createFilePath } = actions;
 
     // ###### RECIPES ########
     if (node.internal.type === `File`) {
@@ -22,7 +22,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             name: `name`,
             value: name,
         });
-        if (/^recipe\/.+\/index.js/.test(node.relativePath)) {
+        if (/^recipe\/.+\/index.json/.test(node.relativePath)) {
             const content = require(`./content/${node.relativeDirectory}`);
             createNodeField({
                 name: `content`,

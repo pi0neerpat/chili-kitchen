@@ -42,6 +42,18 @@ module.exports = {
         /**
          *  Utility Plugins
          */
+        {
+            resolve: `gatsby-plugin-alias-imports`,
+            options: {
+                alias: {
+                    src: "src",
+                    "@components": "src/components",
+                    "@utils": "src/utils",
+                    "@content": "content/",
+                    "@providers": "src/providers",
+                },
+            },
+        },
         `gatsby-plugin-catch-links`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-force-trailing-slashes`,
