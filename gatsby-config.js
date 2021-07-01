@@ -1,14 +1,14 @@
-const path = require(`path`)
-const dotenv = require(`dotenv`)
-dotenv.config()
+const path = require(`path`);
+const dotenv = require(`dotenv`);
+dotenv.config();
 
 /**
-* This is the place where you can tell Gatsby which plugins to use
-* and set them up the way you want.
-*
-* Further info 👉🏼 https://www.gatsbyjs.org/docs/gatsby-config/
-*
-*/
+ * This is the place where you can tell Gatsby which plugins to use
+ * and set them up the way you want.
+ *
+ * Further info 👉🏼 https://www.gatsbyjs.org/docs/gatsby-config/
+ *
+ */
 module.exports = {
     plugins: [
         /**
@@ -18,6 +18,13 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 path: path.join(__dirname, `src`, `pages`),
+                name: `pages`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: path.join(__dirname, `recipes`),
                 name: `pages`,
             },
         },
@@ -32,14 +39,6 @@ module.exports = {
         },
         `gatsby-plugin-sharp`,
         `gatsby-transformer-sharp`,
-        {
-            resolve: `gatsby-source-flotiq`,
-            options: {
-                authToken: process.env.GATSBY_FLOTIQ_API_KEY,
-                forceReload: false, //(optional)
-                includeTypes: [`recipe`,`_media`],
-            },
-        },
         /**
          *  Utility Plugins
          */
@@ -48,4 +47,4 @@ module.exports = {
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
     ],
-}
+};
