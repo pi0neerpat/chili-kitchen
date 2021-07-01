@@ -13,21 +13,17 @@ const fetchRecipes = () => {
                                 name
                                 slug
                                 content {
-                                    name
-                                    iconName
-                                    impactPerDai
-                                    impactText
-                                    isPrivate
-                                    thresholds
-                                    dappyDetails {
-                                        foregroundColor
-                                        backgroundColor
-                                        hat {
-                                            recipients
-                                            proportions
-                                            hatID
-                                        }
+                                    description
+                                    ingredients {
+                                        amount
+                                        unit
+                                        product
                                     }
+                                    steps {
+                                        step
+                                    }
+                                    cookingTime
+                                    servings
                                 }
                             }
                         }

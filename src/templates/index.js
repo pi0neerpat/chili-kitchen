@@ -31,35 +31,35 @@ export default Index;
 
 // This page query loads all posts sorted descending by published date
 // The `limit` and `skip` values are used for pagination
-export const pageQuery = graphql`
-    query {
-        recipes(sort: { fields: flotiqInternal___createdAt, order: DESC }) {
-            edges {
-                node {
-                    id
-                    name
-                    slug
-                    description
-                    ingredients {
-                        amount
-                        unit
-                        product
-                    }
-                    steps {
-                        step
-                        image {
-                            extension
-                            id
-                        }
-                    }
-                    cookingTime
-                    servings
-                    image {
-                        extension
-                        id
-                    }
-                }
-            }
-        }
-    }
-`;
+// export const pageQuery = graphql`
+//     query {
+//         recipes(sort: { fields: flotiqInternal___createdAt, order: DESC }) {
+//             edges {
+//                 node {
+//                     id
+//                     name
+//                     slug
+//                     description
+//                     ingredients {
+//                         amount
+//                         unit
+//                         product
+//                     }
+//                     steps {
+//                         step
+//                         image {
+//                             extension
+//                             id
+//                         }
+//                     }
+//                     cookingTime
+//                     servings
+//                     image {
+//                         extension
+//                         id
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// `;

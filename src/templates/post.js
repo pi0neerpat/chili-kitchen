@@ -10,8 +10,44 @@ import { Layout } from "../components/common";
  * This file renders a single post and loads all the content.
  *
  */
-const Post = ({ data }) => {
+const Post = ({ pageContext, data }) => {
     const post = data.recipe;
+
+    // Step 1. Get recipe from pageContext
+    const {
+        name,
+        website,
+        dappyDetails,
+        slug,
+        seo,
+        iconName,
+        twitterHandle,
+        isPrivate,
+        impactText,
+        impactPerDai,
+    } = pageContext;
+
+    // Step 2. Save data from Context to state
+    const [farmData, setFarmData] = React.useState({});
+    const { allFarmsData } = useContext(Context);
+
+    const loadFarmData = () => {
+        const farm = Object.entries(allFarmsData).find(
+            ([, item]) => item.details.slug === slug
+        );
+        console.log(farm);
+        // setFarmData({
+        //     impactAmount:
+        //         campaign[1].interestEarned *
+        //         campaign[1].details.content.impactPerDai,
+        //     lockedAmount: campaign[1].lockedAmount,
+        //     poolCount: campaign[1].interestReceived.length,
+        // });
+    };
+
+    useEffect(() => {
+        loadFarmData();
+    }, [allFarmsData]);
 
     return (
         <>
@@ -116,31 +152,8 @@ const Post = ({ data }) => {
 
 export default Post;
 
-export const recipeQuery = graphql`
-    query RecipeBySlug($slug: String!) {
-        recipes(slug: { eq: $slug }) {
-            id
-            name
-            slug
-            description
-            ingredients {
-                amount
-                unit
-                product
-            }
-            steps {
-                step
-                image {
-                    extension
-                    id
-                }
-            }
-            cookingTime
-            servings
-            image {
-                extension
-                id
-            }
-        }
-    }
-`;
+// export const recipeQuery = graphql`
+//       query getRecipeImage($recipeGroupName: String!) {
+//
+//       }
+// `;

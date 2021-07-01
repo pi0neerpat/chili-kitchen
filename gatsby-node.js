@@ -1,9 +1,10 @@
 const path = require(`path`);
 const { postsPerPage } = require(`./src/utils/siteConfig`);
 const { paginate } = require(`gatsby-awesome-pagination`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-    const { createNodeField, createFilePath } = actions;
+    const { createNodeField } = actions;
 
     // ###### RECIPES ########
     if (node.internal.type === `File`) {
@@ -22,7 +23,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
             name: `name`,
             value: name,
         });
-        if (/^recipe\/.+\/index.json/.test(node.relativePath)) {
+        if (/^recipe\/.+\/index.js/.test(node.relativePath)) {
             const content = require(`./content/${node.relativeDirectory}`);
             createNodeField({
                 name: `content`,
