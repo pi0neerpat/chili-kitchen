@@ -3,8 +3,8 @@
   "description": "A Gatsby starter to build your own recipes page with Flotiq and Gatsby.",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "Flotiq Developers <hello@flotiq.com>",
-  "homepage": "https://flotiq.com",
+  "author": "Patrick Gallagher & Chair",
+  "homepage": "https://chilikitchen.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flotiq/gatsby-starter-recipes.git"
@@ -15,13 +15,6 @@
   "engines": {
     "node": ">= 10.13.0"
   },
-  "bugs": {
-    "url": "https://github.com/flotiq/gatsby-starter-recipes/issues"
-  },
-  "keywords": [
-    "gatsby",
-    "ghost"
-  ],
   "main": "n/a",
   "scripts": {
     "serve": "gatsby build && NODE_ENV=production gatsby serve",
@@ -53,7 +46,6 @@
     "gatsby-plugin-react-helmet": "3.1.22",
     "gatsby-plugin-sharp": "^2.10.1",
     "gatsby-source-filesystem": "2.1.48",
-    "gatsby-source-ghost": "4.0.4",
     "gatsby-transformer-sharp": "2.3.16",
     "lodash": "^4.17.20",
     "react": "16.13.0",
