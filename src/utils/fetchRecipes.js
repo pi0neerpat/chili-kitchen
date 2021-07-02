@@ -1,9 +1,9 @@
 import { useStaticQuery, graphql } from "gatsby";
 
 const fetchRecipes = () => {
-    const recipes = useStaticQuery(
+    const recipeDetails = useStaticQuery(
         graphql`
-            query recipesData {
+            query recipeDetails {
                 recipes: allFile(
                     filter: { relativePath: { regex: "/^recipe/.+/index.js/" } }
                 ) {
@@ -29,14 +29,40 @@ const fetchRecipes = () => {
                         }
                     }
                 }
+                heroes: allFile(
+                    filter: {
+                        relativePath: { regex: "/^recipe/" }
+                        name: { regex: "/^hero/" }
+                    }
+                ) {
+                    edges {
+                        node {
+                            name
+                            publicURL
+                            fields {
+                                slug
+                            }
+                        }
+                    }
+                }
             }
         `
     );
-    return recipes.recipes.edges.map((recipe) => ({
-        name: recipe.node.fields.name,
-        slug: recipe.node.fields.slug,
-        ...recipe.node.fields.content,
-    }));
+    return recipeDetails.recipes.edges.map((recipe) => {
+        const image = recipeDetails.heroes.edges.find(
+            (img) =>
+                img.node.name === "hero" &&
+                img.node.fields.slug.includes(
+                    recipe.node.fields.slug.replace(/\/recipe\//, "")
+                )
+        );
+        return {
+            name: recipe.node.fields.name,
+            slug: recipe.node.fields.slug,
+            image,
+            ...recipe.node.fields.content,
+        };
+    });
 };
 
 export default fetchRecipes;

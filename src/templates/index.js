@@ -9,29 +9,15 @@ import fetchRecipes from "@utils/fetchRecipes";
  * Loads all posts
  *
  */
-const Index = ({ data, pageContext }) => {
-    const { heroes } = data;
+const Index = ({ pageContext }) => {
     const recipes = fetchRecipes();
-
-    const recipesWithImages = recipes.map((recipe) => {
-        const image = heroes.edges.find(
-            (img) =>
-                img.node.name === "hero" &&
-                img.node.fields.slug.includes(
-                    recipe.slug.replace(/\/recipe\//, "")
-                )
-        );
-        return { ...recipe, image };
-    });
-
-    console.log(recipesWithImages);
 
     return (
         <>
             <Layout isHome={true}>
                 <div className="container">
                     <section className="post-feed">
-                        {recipesWithImages.map((recipe) => (
+                        {recipes.map((recipe) => (
                             <PostCard key={recipe.id} post={recipe} />
                         ))}
                     </section>
@@ -42,25 +28,9 @@ const Index = ({ data, pageContext }) => {
     );
 };
 
-export const pageQuery = graphql`
-    query indexPageQuery {
-        heroes: allFile(
-            filter: {
-                relativePath: { regex: "/^recipe/" }
-                name: { regex: "/^hero/" }
-            }
-        ) {
-            edges {
-                node {
-                    name
-                    publicURL
-                    fields {
-                        slug
-                    }
-                }
-            }
-        }
-    }
-`;
+// export const pageQuery = graphql`
+//     query indexPageQuery {
+//     }
+// `;
 
 export default Index;
