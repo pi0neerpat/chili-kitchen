@@ -49,10 +49,10 @@ const Post = ({ pageContext }) => {
                         <section className="post-full-content">
                             <h1 className="content-title">{post.name}</h1>
                             <h4>
-                                <div>APR: {farmData.interestRate}%</div>
+                                <div>APR: {farmData?.interestRate}%</div>
                                 <div>
                                     Tokens Locked:{" "}
-                                    {farmData.lockedAmount.toLocaleString()}
+                                    {farmData?.lockedAmount?.toLocaleString()}
                                 </div>
                                 <div>Servings: {post.servings} meals</div>
                                 <div>
