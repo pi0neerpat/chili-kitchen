@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 // import Img from "gatsby-image";
 import CookingTime from "../../images/clock-regular.svg";
 import Servings from "../../images/user-solid.svg";
@@ -12,11 +13,9 @@ const PostCard = ({ post }) => {
         <Link to={url} className="post-card">
             <header className="post-card-header">
                 {post.image ? (
-                    <div
+                    <Img
                         className="post-card-image"
-                        style={{
-                            backgroundImage: `url(${post.image.node.publicURL})`,
-                        }}
+                        fluid={post.image.node.childImageSharp.fluid}
                     />
                 ) : (
                     <div className="post-card-image" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { graphql } from "gatsby";
 
 import { Layout, PostCard, Pagination } from "../components/common";
@@ -11,7 +11,7 @@ const Index = ({ pageContext }) => {
     const recipes = fetchRecipes();
 
     // Step 2. Load all farm data from Context (DataProvider)
-    const [context] = React.useContext(Context);
+    const [context] = useContext(Context);
     const { allFarmsData } = context;
     const [farmsData, setFarmsData] = React.useState({});
     const loadFarmData = () => {

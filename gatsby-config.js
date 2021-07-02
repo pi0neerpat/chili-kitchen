@@ -40,7 +40,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-sharp`,
             options: {
-                failOnError: true,
+                failOnError: false,
             },
         },
         `gatsby-transformer-sharp`,

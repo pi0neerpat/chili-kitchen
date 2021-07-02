@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { graphql } from "gatsby";
 import Helmet from "react-helmet";
+import Img from "gatsby-image";
 
 import { Layout } from "../components/common";
 import { Context } from "@providers/Context";
@@ -14,9 +15,9 @@ const Post = ({ pageContext }) => {
     )[1];
 
     // Step 2. Load this farm's data from Context (DataProvider)
-    const [context] = React.useContext(Context);
+    const [context] = useContext(Context);
     const { allFarmsData } = context;
-    const [farmData, setFarmData] = React.useState({});
+    const [farmData, setFarmData] = useState({});
     const parseFarmData = () => {
         const data = Object.entries(allFarmsData).find(([, item]) => {
             return item.details.slug === pageContext.slug;
@@ -40,8 +41,10 @@ const Post = ({ pageContext }) => {
                     <article className="content">
                         {post.image ? (
                             <figure className="post-feature-image">
-                                <img
-                                    src={post.image.node.publicURL}
+                                <Img
+                                    fluid={
+                                        post.image.node.childImageSharp.fluid
+                                    }
                                     alt={post.name}
                                 />
                             </figure>

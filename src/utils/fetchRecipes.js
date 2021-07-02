@@ -42,6 +42,11 @@ const fetchRecipes = () => {
                             fields {
                                 slug
                             }
+                            childImageSharp {
+                                fluid {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
                         }
                     }
                 }

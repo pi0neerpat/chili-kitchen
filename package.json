@@ -10,7 +10,7 @@
     "url": "git+https://github.com/flotiq/gatsby-starter-recipes.git"
   },
   "resolutions": {
-    "sharp": "0.23.4"
+    "sharp": "0.28.1"
   },
   "engines": {
     "node": ">= 10.13.0"
@@ -27,14 +27,10 @@
     "babel-eslint": "10.1.0",
     "dotenv": "^8.2.0",
     "eslint": "6.8.0",
-    "eslint-plugin-ghost": "1.0.0",
     "eslint-plugin-react": "7.18.3"
   },
   "dependencies": {
     "@ethersproject/providers": "^5.4.0",
-    "@tryghost/helpers": "1.1.22",
-    "@tryghost/helpers-gatsby": "1.0.25",
-    "cheerio": "1.0.0-rc.3",
     "gatsby": "^2.28.2",
     "gatsby-awesome-pagination": "0.3.5",
     "gatsby-image": "2.2.41",
@@ -46,7 +42,7 @@
     "gatsby-plugin-manifest": "2.2.42",
     "gatsby-plugin-offline": "3.0.35",
     "gatsby-plugin-react-helmet": "3.1.22",
-    "gatsby-plugin-sharp": "^2.10.1",
+    "gatsby-plugin-sharp": "^3.1.2",
     "gatsby-source-filesystem": "2.1.48",
     "gatsby-transformer-sharp": "2.3.16",
     "lodash": "^4.17.20",
