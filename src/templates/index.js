@@ -57,11 +57,6 @@ export const pageQuery = graphql`
                     fields {
                         slug
                     }
-                    childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
                 }
             }
         }
