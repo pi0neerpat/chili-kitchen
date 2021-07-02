@@ -4,11 +4,7 @@ import { graphql } from "gatsby";
 import { Layout, PostCard, Pagination } from "../components/common";
 
 import fetchRecipes from "@utils/fetchRecipes";
-/**
- * Main index page (home page)
- * Loads all posts
- *
- */
+
 const Index = ({ pageContext }) => {
     const recipes = fetchRecipes();
 

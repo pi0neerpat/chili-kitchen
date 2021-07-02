@@ -1,7 +1,6 @@
 module.exports = {
     id: "recipe-1",
     name: "Tomato soup",
-    slug: "tomato-soup",
     steps: [
         {
             step: "Maecenas lacinia augue quam.",

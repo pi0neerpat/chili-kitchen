@@ -3,51 +3,40 @@ import { graphql } from "gatsby";
 import Helmet from "react-helmet";
 
 import { Layout } from "../components/common";
+import { Context } from "@providers/Context";
+import fetchRecipes from "@utils/fetchRecipes";
 
 /**
- * Single post view (/:slug)
+ * Single post view (/recipe/:slug)
  *
  * This file renders a single post and loads all the content.
  *
  */
 const Post = ({ pageContext, data }) => {
-    const post = data.recipe;
+    const recipes = fetchRecipes();
+    const post = Object.entries(recipes).find(
+        ([, item]) => item.slug === pageContext.slug
+    )[1];
 
-    // Step 1. Get recipe from pageContext
-    const {
-        name,
-        website,
-        dappyDetails,
-        slug,
-        seo,
-        iconName,
-        twitterHandle,
-        isPrivate,
-        impactText,
-        impactPerDai,
-    } = pageContext;
-
-    // Step 2. Save data from Context to state
-    const [farmData, setFarmData] = React.useState({});
-    const { allFarmsData } = useContext(Context);
-
-    const loadFarmData = () => {
-        const farm = Object.entries(allFarmsData).find(
-            ([, item]) => item.details.slug === slug
-        );
-        console.log(farm);
-        // setFarmData({
-        //     impactAmount:
-        //         campaign[1].interestEarned *
-        //         campaign[1].details.content.impactPerDai,
-        //     lockedAmount: campaign[1].lockedAmount,
-        //     poolCount: campaign[1].interestReceived.length,
-        // });
-    };
-
-    useEffect(() => {
-        loadFarmData();
-    }, [allFarmsData]);
+    // const { allFarmsData } = React.useContext(Context);
+    //
+    // const loadFarmData = () => {
+    //     const farm = Object.entries(allFarmsData).find(
+    //         ([, item]) => item.details.slug === slug
+    //     );
+    //     console.log(farm);
+    //     // setFarmData({
+    //     //     impactAmount:
+    //     //         campaign[1].interestEarned *
+    //     //         campaign[1].details.content.impactPerDai,
+    //     //     lockedAmount: campaign[1].lockedAmount,
+    //     //     poolCount: campaign[1].interestReceived.length,
+    //     // });
+    // };
+    //
+    // React.useEffect(() => {
+    //     loadFarmData();
+    // }, [allFarmsData]);
 
     return (
         <>
@@ -57,10 +46,10 @@ const Post = ({ pageContext, data }) => {
             <Layout>
                 <div className="container">
                     <article className="content">
-                        {post.image && post.image[0] ? (
+                        {post.image ? (
                             <figure className="post-feature-image">
                                 <img
-                                    src={`https://api.flotiq.com/image/1280x0/${post.image[0].id}.${post.image[0].extension}`}
+                                    src={post.image.node.publicURL}
                                     alt={post.name}
                                 />
                             </figure>

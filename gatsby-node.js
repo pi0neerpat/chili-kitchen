@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const result = await graphql(`
         {
             recipes: allFile(
-                filter: { relativePath: { regex: "/^recipes/.+/index.js/" } }
+                filter: { relativePath: { regex: "/^recipe/.+/index.js/" } }
             ) {
                 edges {
                     node {
