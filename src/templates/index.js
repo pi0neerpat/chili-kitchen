@@ -3,21 +3,36 @@ import { graphql } from "gatsby";
 
 import { Layout, PostCard, Pagination } from "../components/common";
 
+import fetchRecipes from "@utils/fetchRecipes";
 /**
  * Main index page (home page)
  * Loads all posts
  *
  */
 const Index = ({ data, pageContext }) => {
-    const recipes = data.allRecipe.edges;
+    const { heroes } = data;
+    const recipes = fetchRecipes();
+
+    const recipesWithImages = recipes.map((recipe) => {
+        const image = heroes.edges.find(
+            (img) =>
+                img.node.name === "hero" &&
+                img.node.fields.slug.includes(
+                    recipe.slug.replace(/\/recipe\//, "")
+                )
+        );
+        return { ...recipe, image };
+    });
+
+    console.log(recipesWithImages);
 
     return (
         <>
             <Layout isHome={true}>
                 <div className="container">
                     <section className="post-feed">
-                        {recipes.map(({ node }) => (
-                            <PostCard key={node.id} post={node} />
+                        {recipesWithImages.map((recipe) => (
+                            <PostCard key={recipe.id} post={recipe} />
                         ))}
                     </section>
                     <Pagination pageContext={pageContext} />
@@ -27,39 +42,30 @@ const Index = ({ data, pageContext }) => {
     );
 };
 
-export default Index;
+export const pageQuery = graphql`
+    query indexPageQuery {
+        heroes: allFile(
+            filter: {
+                relativePath: { regex: "/^recipes/" }
+                name: { regex: "/^hero/" }
+            }
+        ) {
+            edges {
+                node {
+                    name
+                    publicURL
+                    fields {
+                        slug
+                    }
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
+            }
+        }
+    }
+`;
 
-// This page query loads all posts sorted descending by published date
-// The `limit` and `skip` values are used for pagination
-// export const pageQuery = graphql`
-//     query {
-//         recipes(sort: { fields: flotiqInternal___createdAt, order: DESC }) {
-//             edges {
-//                 node {
-//                     id
-//                     name
-//                     slug
-//                     description
-//                     ingredients {
-//                         amount
-//                         unit
-//                         product
-//                     }
-//                     steps {
-//                         step
-//                         image {
-//                             extension
-//                             id
-//                         }
-//                     }
-//                     cookingTime
-//                     servings
-//                     image {
-//                         extension
-//                         id
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// `;
+export default Index;

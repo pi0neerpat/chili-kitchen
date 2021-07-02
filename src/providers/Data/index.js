@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Context } from "@providers/Context";
 import { InfuraProvider } from "@ethersproject/providers";
 
@@ -5,16 +7,15 @@ import fetchRecipes from "@utils/fetchRecipes";
 
 const DataProvider = () => {
     const recipes = fetchRecipes();
-    const [contex, setContext] = React.useContext(Context);
+    const [context, setContext] = React.useContext(Context);
 
     const load = async () => {
         const allFarmsData = await Promise.all(
-            recipes.edges.map(async (recipe) => {
-                const details = recipe.node.fields;
+            recipes.map(async (recipe) => {
                 return {
-                    [recipe.node.fields.slug]: {
+                    [recipe.slug]: {
                         interestRate: 10,
-                        details,
+                        details: recipe,
                     },
                 };
             })

@@ -67,8 +67,9 @@ exports.createPages = async ({ graphql, actions }) => {
     const indexTemplate = path.resolve(`./src/templates/index.js`);
     const postTemplate = path.resolve(`./src/templates/post.js`);
 
-    // ###### RECIPES ########
-    result.data.recipes.edges.forEach(({ node }) => {
+    const recipes = result.data.recipes.edges;
+
+    recipes.forEach(({ node }) => {
         const details = require(`./content/${node.relativeDirectory}`);
         createPage({
             path: `${node.fields.slug}/`,
@@ -84,7 +85,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // Create pagination
     paginate({
         createPage,
-        items: posts,
+        items: recipes,
         itemsPerPage: postsPerPage,
         component: indexTemplate,
         pathPrefix: ({ pageNumber }) => {

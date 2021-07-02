@@ -32,7 +32,11 @@ const fetchRecipes = () => {
             }
         `
     );
-    return recipes.recipes;
+    return recipes.recipes.edges.map((recipe) => ({
+        name: recipe.node.fields.name,
+        slug: recipe.node.fields.slug,
+        ...recipe.node.fields.content,
+    }));
 };
 
 export default fetchRecipes;
