@@ -2,11 +2,31 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import { Layout, PostCard, Pagination } from "../components/common";
+import { Context } from "@providers/Context";
 
 import fetchRecipes from "@utils/fetchRecipes";
 
 const Index = ({ pageContext }) => {
+    // Step 1. Load all recipe details
     const recipes = fetchRecipes();
+
+    // Step 2. Load all farm data from Context (DataProvider)
+    const [context] = React.useContext(Context);
+    const { allFarmsData } = context;
+    const [farmsData, setFarmsData] = React.useState({});
+    const loadFarmData = () => {
+        // TODO: Parse allFarmsData to inject the interest rate here too
+        // const data = Object.entries(allFarmsData).find(([, item]) => {
+        //     return item.details.slug === pageContext.slug;
+        // })[1];
+        // setFarmData({
+        //     ...data,
+        // });
+    };
+
+    React.useEffect(() => {
+        allFarmsData && loadFarmData();
+    }, [allFarmsData]);
 
     return (
         <>

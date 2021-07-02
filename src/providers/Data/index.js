@@ -13,10 +13,9 @@ const DataProvider = () => {
         const allFarmsData = await Promise.all(
             recipes.map(async (recipe) => {
                 return {
-                    [recipe.slug]: {
-                        interestRate: 10,
-                        details: recipe,
-                    },
+                    interestRate: 234,
+                    lockedAmount: 199999,
+                    details: recipe,
                 };
             })
         );
