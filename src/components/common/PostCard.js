@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import GatsbyImage from "gatsby-image";
+// import Img from "gatsby-image";
 import CookingTime from "../../images/clock-regular.svg";
 import Servings from "../../images/user-solid.svg";
 
@@ -10,12 +12,11 @@ const PostCard = ({ post }) => {
     return (
         <Link to={url} className="post-card">
             <header className="post-card-header">
-                {post.image && post.image[0] ? (
-                    <div
+                {post.image ? (
+                    <GatsbyImage
                         className="post-card-image"
-                        style={{
-                            backgroundImage: `url(https://api.flotiq.com/image/260x0/${post.image[0].id}.${post.image[0].extension})`,
-                        }}
+                        fluid={post.image.node.childImageSharp.fluid}
+                        alt=""
                     />
                 ) : (
                     <div className="post-card-image" />

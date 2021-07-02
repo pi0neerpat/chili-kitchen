@@ -37,7 +37,12 @@ module.exports = {
                 name: `images`,
             },
         },
-        `gatsby-plugin-sharp`,
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                failOnError: true,
+            },
+        },
         `gatsby-transformer-sharp`,
         /**
          *  Utility Plugins

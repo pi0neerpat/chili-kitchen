@@ -46,7 +46,7 @@ export const pageQuery = graphql`
     query indexPageQuery {
         heroes: allFile(
             filter: {
-                relativePath: { regex: "/^recipes/" }
+                relativePath: { regex: "/^recipe/" }
                 name: { regex: "/^hero/" }
             }
         ) {
