@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import Logo from '../../images/logo.png';
+import Logo from '../../images/biggerMetaCartelLogo.jpeg';
 
 // Styles
 import '../../styles/app.css'
@@ -18,10 +18,10 @@ import '../../styles/app.css'
 const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
     const site = {
-        "title": 'Bon Apetit!',
-        'subtitle': 'Recipes with Flotiq',
-        'twitterUrl': 'https://twitter.com/flotiq',
-        'facebookUrl': 'https://www.facebook.com/Flotiq-104200727751200/',
+        "title": 'Chili Kichin',
+        'subtitle': 'It is farm and also kichen.',
+        'twitterUrl': 'https://twitter.com/Meta_Cartel',
+        'websiteUrl': 'https://www.metacartel.org/',
         'siteUrl': ''
     }
 
@@ -46,7 +46,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                                 </div>
                                 <div className="site-mast-right">
                                     { site.twitterUrl && <a href={ site.twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                    { site.facebookUrl && <a href={ site.facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
+                                    { site.websiteUrl && <a href={ site.websiteUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
                                     <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${site.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
                                 </div>
                             </div>
