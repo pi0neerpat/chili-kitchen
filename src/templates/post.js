@@ -6,37 +6,29 @@ import { Layout } from "../components/common";
 import { Context } from "@providers/Context";
 import fetchRecipes from "@utils/fetchRecipes";
 
-/**
- * Single post view (/recipe/:slug)
- *
- * This file renders a single post and loads all the content.
- *
- */
-const Post = ({ pageContext, data }) => {
+const Post = ({ pageContext }) => {
+    // Step 1. Load this recipe's details
     const recipes = fetchRecipes();
     const post = Object.entries(recipes).find(
         ([, item]) => item.slug === pageContext.slug
     )[1];
 
-    // const { allFarmsData } = React.useContext(Context);
-    //
-    // const loadFarmData = () => {
-    //     const farm = Object.entries(allFarmsData).find(
-    //         ([, item]) => item.details.slug === slug
-    //     );
-    //     console.log(farm);
-    //     // setFarmData({
-    //     //     impactAmount:
-    //     //         campaign[1].interestEarned *
-    //     //         campaign[1].details.content.impactPerDai,
-    //     //     lockedAmount: campaign[1].lockedAmount,
-    //     //     poolCount: campaign[1].interestReceived.length,
-    //     // });
-    // };
-    //
-    // React.useEffect(() => {
-    //     loadFarmData();
-    // }, [allFarmsData]);
+    // Step 2. Load this farm's data from Context (DataProvider)
+    const [context] = React.useContext(Context);
+    const { allFarmsData } = context;
+    const [farmData, setFarmData] = React.useState({});
+    const parseFarmData = () => {
+        const data = Object.entries(allFarmsData).find(([, item]) => {
+            return item.details.slug === pageContext.slug;
+        })[1];
+        setFarmData({
+            ...data,
+        });
+    };
+
+    React.useEffect(() => {
+        allFarmsData && parseFarmData();
+    }, [allFarmsData]);
 
     return (
         <>
@@ -57,6 +49,11 @@ const Post = ({ pageContext, data }) => {
                         <section className="post-full-content">
                             <h1 className="content-title">{post.name}</h1>
                             <h4>
+                                <div>APR: {farmData.interestRate}%</div>
+                                <div>
+                                    Tokens Locked:{" "}
+                                    {farmData.lockedAmount.toLocaleString()}
+                                </div>
                                 <div>Servings: {post.servings} meals</div>
                                 <div>
                                     Cooking time: {post.cookingTime} minutes
