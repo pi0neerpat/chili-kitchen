@@ -19,7 +19,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
     const site = {
         "title": 'Chili Kitchen',
-        'subtitle': 'It is farm and also kitchen.',
+        'subtitle': 'Chili being silly.',
         'twitterUrl': 'https://twitter.com/Meta_Cartel',
         'websiteUrl': 'https://www.metacartel.org/',
         'siteUrl': ''
