@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Logo from '../../images/biggerMetaCartelLogo.jpeg';
+// import FarmerImage from ''../../images/biggerMetaCartelLogo.jpeg';
 
 // Styles
 import '../../styles/app.css'
@@ -18,8 +19,8 @@ import '../../styles/app.css'
 const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
     const site = {
-        "title": 'Chili Kichin',
-        'subtitle': 'It is farm and also kichen.',
+        "title": 'Chili Kitchen',
+        'subtitle': 'It is farm and also kitchen.',
         'twitterUrl': 'https://twitter.com/Meta_Cartel',
         'websiteUrl': 'https://www.metacartel.org/',
         'siteUrl': ''
@@ -46,8 +47,6 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                                 </div>
                                 <div className="site-mast-right">
                                     { site.twitterUrl && <a href={ site.twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                    { site.websiteUrl && <a href={ site.websiteUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                                    <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${site.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
                                 </div>
                             </div>
                             { isHome ?
@@ -78,14 +77,13 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2020 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                <Link to="/">🌶️ &nbsp;{site.title} 🌶️ </Link>&nbsp;Brought to you by <a className="site-foot-nav-item" href="metacartel.org" target="_blank" rel="noopener noreferrer">MetaCartel</a>
                             </div>
                             <div className="site-foot-nav-right">
-                                <a href="https://flotiq.com">Adapted to Flotiq.com</a>
+                                <a href="https://app.sushi.com/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0x48e1eec032171f871890c86308147032bb246508">Find Chilis on SushiSwap</a>
                             </div>
                         </div>
                     </footer>
-
                 </div>
             </div>
 
