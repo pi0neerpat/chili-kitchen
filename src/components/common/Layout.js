@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Logo from '../../images/biggerMetaCartelLogo.jpeg';
-// import FarmerImage from ''../../images/biggerMetaCartelLogo.jpeg';
 
 // Styles
 import '../../styles/app.css'
