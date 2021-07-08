@@ -526,7 +526,7 @@ h6 {
 }
 
 .container {
-    max-width: 1120px;
+    max-width: 100vw;
     margin: 0 auto;
     padding: 0 4vw;
 }
@@ -663,13 +663,13 @@ h6 {
 /* ---------------------------------------------------------- */
 
 .site-head {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     padding-bottom: 20px;
     color: #fff;
     background: var(--color-base);
     background-position: center;
     background-size: cover;
-    background-image: url("../images/cook.jpg");
+    background-image: url("../images/chili-kitchen-banner.png");
 }
 
 .site-nav-item {
@@ -690,13 +690,15 @@ h6 {
 }
 
 .site-logo {
-    height: 25px;
+    height: 3rem;
 }
 
 .site-mast {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
 }
 
 .site-mast-right {
@@ -717,12 +719,13 @@ h6 {
 
 .site-banner-title {
     margin: 0;
-    background: var(--color-accent);
+    background: #FFA32A;
     display: inline-block;
     padding: 4px 15px;
-    color: #fff;
-    font-size: 4rem;
+    color: black;
+    font-size: 2rem;
     line-height: 1.3em;
+    position: relative;
 }
 
 .site-banner-desc {

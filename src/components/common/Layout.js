@@ -18,7 +18,7 @@ import '../../styles/app.css'
 const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
     const site = {
-        "title": 'Bon Apetit!',
+        "title": 'Chili Kitchen',
         'subtitle': 'Recipes with Flotiq',
         'twitterUrl': 'https://twitter.com/flotiq',
         'facebookUrl': 'https://www.facebook.com/Flotiq-104200727751200/',
@@ -41,7 +41,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                             <div className="site-mast">
                                 <div className="site-mast-left">
                                     <Link to="/">
-                                        <img className="site-logo" src={ Logo } alt="Recipes with Flotiq.com" />
+                                        <img className="site-logo" src={ Logo } alt="Chili Kitchen Logo" />
                                     </Link>
                                 </div>
                                 <div className="site-mast-right">
@@ -52,15 +52,11 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                             </div>
                             { isHome ?
                                 <div className="site-banner">
-                                    <h1 className="site-banner-title">{site.title}</h1>
-                                    <p className="site-banner-desc">{site.subtitle}</p>
+                                    <h1 className="site-banner-title">About the project</h1>
                                 </div> :
                                 null}
                             <nav className="site-nav">
                                 <div className="site-nav-left">
-                                </div>
-                                <div className="site-nav-right">
-                                    <Link className="site-nav-button" to="/about">About</Link>
                                 </div>
                             </nav>
                         </div>
