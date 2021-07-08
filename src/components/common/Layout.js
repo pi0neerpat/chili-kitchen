@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import Logo from '../../images/logo.png';
+import Logo from '../../images/chili-kitchen-logo.png';
 
 // Styles
 import '../../styles/app.css'
