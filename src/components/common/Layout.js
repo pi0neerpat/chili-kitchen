@@ -51,9 +51,16 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                                 </div>
                             </div>
                             { isHome ?
+                                <div><div className="button-container"></div>
                                 <div className="site-banner">
-                                    <h1 className="site-banner-title">About the project</h1>
-                                </div> :
+                                    {/* empty div for space */}
+                                </div>
+                                <div className="site-banner">
+                                    <a href="/about" className="site-banner-title">About the project</a>
+                                </div>
+                                </div>
+
+                                 :
                                 null}
                             <nav className="site-nav">
                                 <div className="site-nav-left">
