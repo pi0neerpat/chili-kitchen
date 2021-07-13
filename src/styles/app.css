@@ -664,12 +664,12 @@ h6 {
 
 .site-head {
     /* padding-top: 20px; */
-    padding-bottom: 20px;
     color: #fff;
     background: var(--color-base);
     background-position: center;
     background-size: cover;
     background-image: url("../images/chili-kitchen-banner.png");
+    min-height: 200px;
 }
 
 .site-nav-item {
