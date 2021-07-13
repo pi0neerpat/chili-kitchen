@@ -668,7 +668,7 @@ h6 {
     color: #fff;
     background: var(--color-base);
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-image: url("../images/chili-kitchen-banner.png");
 }
 
