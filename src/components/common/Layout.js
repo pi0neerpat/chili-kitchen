@@ -37,8 +37,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                 <div className="viewport-top">
                     {/* The main header section on top of the screen */}
                     <header className="site-head">
-                        <div className="container">
-                            <div className="site-mast">
+                    <div className="site-mast">
                                 <div className="site-mast-left">
                                     <Link to="/">
                                         <img className="site-logo" src={ Logo } alt="Chili Kitchen Logo" />
@@ -48,6 +47,8 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                                     <a href="/about" className="site-banner-title">Connect</a>
                                 </div>
                             </div>
+                        <div className="container">
+                            
                             { isHome ?
                                 <div><div className="button-container"></div>
                                 <div className="site-banner">
