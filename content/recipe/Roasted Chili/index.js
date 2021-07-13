@@ -1,6 +1,6 @@
 module.exports = {
     id: "recipe-1",
-    name: "Roasted Chili",
+    name: "Roasted Chili is awesome",
     steps: [
         {
             step: "Maecenas lacinia augue quam.",

@@ -3695,6 +3695,11 @@ cheerio@^1.0.0-rc.3:
     parse5-htmlparser2-tree-adapter "^6.0.1"
     tslib "^2.2.0"
 
+chicken@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmjs.org/chicken/-/chicken-0.0.1.tgz#1e65b75d46280b19fae76463353d7c2a66d8fc2c"
+  integrity sha1-HmW3XUYoCxn652RjNT18KmbY/Cw=
+
 chokidar@3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/chokidar/-/chokidar-3.3.0.tgz#12c0714668c55800f659e262d4962a97faf554a6"
