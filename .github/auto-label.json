@@ -1,7 +1,7 @@
 {
   "rules": {
-    "dappy": ["packages/dappy/"],
-    "web3utils": ["packages/web3utils/"],
+    "app": ["src/"],
+    "recipe": ["content/"],
     "dependency change": ["package.json"]
   }
 }
