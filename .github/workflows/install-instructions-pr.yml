@@ -1,0 +1,58 @@
+name: Publish PR Packages
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment_installation_instructions:
+    name: Add "Dappy Package Installation"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Show context
+        run: |
+          echo github.event_name: ${{ github.event_name }}
+          echo github.sha: ${{ github.sha }}
+          echo github.repository: ${{ github.repository }}
+          echo github.ref: ${{ github.ref }}
+          echo github.head_ref: ${{ github.head_ref }}
+          echo github.base_ref: ${{ github.base_ref }}
+
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ### 📦 Dappy Package Installation
+
+            This app uses [Dappy](https://dappy.dev) for making web3 transactions. Dappy is currently in private beta. 
+
+            <details><summary>:point_left: Follow these instructions to request access</summary>
+
+            1. Send a DM to @pi0neerpat with your npm username, and wait for access.
+            2. Run the following command:
+
+            ```bash
+            npm adduser --registry=http://npm.patrickgallagher.dev --scope=@pi0neerpat
+            ```
+
+            3. Verify that your `.npmrc` file is correct. It should look something like this:
+
+            ```
+            cat ~/.npmrc
+
+            @pi0neerpat:registry=https://npm.patrickgallagher.dev
+            //npm.patrickgallagher.dev/:_authToken=<your-secret>
+            ```
+
+            You should now be able to run `yarn install` successfully!
+            </details>

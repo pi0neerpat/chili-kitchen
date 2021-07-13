@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "app": ["src/"],
+    "recipe": ["content/"],
+    "dependency change": ["package.json"]
+  }
+}
