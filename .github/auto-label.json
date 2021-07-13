@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "dappy": ["packages/dappy/"],
+    "web3utils": ["packages/web3utils/"],
+    "dependency change": ["package.json"]
+  }
+}
