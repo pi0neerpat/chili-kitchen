@@ -1,100 +1,63 @@
-<a href="https://flotiq.com/">
-    <img src="https://editor.flotiq.com/fonts/fq-logo.svg" alt="Flotiq logo" title="Flotiq" align="right" height="60" />
-</a>
+<h1 align="center">Welcome to CHILI Kitchen 👋</h1>
+<p>
+  <a href="https://twitter.com/meta" target="_blank">
+    <img alt="Twitter: pi0neerpat" src="https://img.shields.io/twitter/follow/pi0neerpat.svg?style=social" />
+  </a>
+  <a href="https://twitter.com/Meta_Cartel" target="_blank">
+    <img alt="Twitter: Meta_Cartel" src="https://img.shields.io/twitter/follow/Meta_Cartel.svg?style=social" />
+  </a>
+</p>
 
-Gatsby Starter - Recipes
-========================
+> Brought to you by [MetaCartel](https://www.metacartel.org)
 
-This is a [Gatsby](https://gatsbyjs.org) starter project for a recipes website. It's configured to pull recipe data from [Flotiq](https://flotiq.com) and can be easily deployed to your cloud hosting - Heroku, Netlify, Gatsby Cloud, etc.
+### 🏠 [Homepage](https://chilikitchen.com)
 
-Live Demo: https://flotiq-starter-recipes.herokuapp.com
+## Install
 
-Screenshot
+### 📦 Dappy Package Installation
 
-<img src="https://github.com/flotiq/gatsby-starter-recipes/raw/master/docs/flotiq-starter-recipes.png" width=480 />
+This app uses [Dappy](https://dappy.dev) for making web3 transactions. Dappy is currently in private beta.
 
-## Quick start
+<details><summary>:point_left: Follow these instructions to request access</summary>
 
-1. **Start the project from template using [Flotiq CLI]((https://github.com/flotiq/flotiq-cli))**
+1. Send a DM to @pi0neerpat with your npm username, and wait for access.
+2. Run the following command:
 
-    ```bash
-   npm install -g flotiq-cli
-   flotiq start [flotiqApiKey] [projectName] https://github.com/flotiq/gatsby-starter-recipes.git
-    ```
-   * `flotiqApKey` - Read and write API key to your Flotiq account      
-   * `projectName` - project name or project path (if you wish to start or import data from the current directory - use `.`)
+```bash
+npm adduser --registry=http://npm.patrickgallagher.dev --scope=@pi0neerpat
+```
 
-1. **You can also start the project from template using Gatsby CLI**
-    
-    ```bash
-    gatsby new gatsby-starter-recipes https://github.com/flotiq/gatsby-starter-recipes.git
-    ```
-1. **Setup "Recipe" Content Type in Flotiq**
+3. Verify that your `.npmrc` file is correct. It should look something like this:
 
-   Create your [Flotiq.com](https://flotiq.com) account. Next, create the `Recipe` Content Type:
+```
+cat ~/.npmrc
 
-   ![Recipe content type in flotiq](docs/create-definition-recipe.png)
-    
-   _Note: You can also create `Recipe` using [Flotiq REST API](https://flotiq.com/docs/API/)._ 
+@pi0neerpat:registry=https://npm.patrickgallagher.dev
+//npm.patrickgallagher.dev/:_authToken=<your-secret>
+```
 
-1. **Configure application**
+You should now be able to run `yarn install` successfully!
 
-    The next step is to configure our application to know from where it has to fetch the data.
-       
-    You need to create a file called `.env` inside the root of the directory, with the following structure:
+</details>
 
-    ```
-    GATSBY_FLOTIQ_API_KEY=YOUR FLOTIQ API KEY
-    ```
+## Usage
 
-1.  **Start developing**
+```sh
+gatsby develop
+```
 
-    Navigate into your new site’s directory and start it up.
+## Author
 
-    ```sh
-    cd gatsby-starter-recipes
-    npm install
-    gatsby develop
-    ```
-    
-    This step is optional and is not necessary if you used flotiq-cli to start the project.
-    
-    If you wish to import example recipes to your account, before running `gatsby develop`, install [flotiq-cli](https://github.com/flotiq/flotiq-cli), and run in project directory:
-    
-    ```sh
-    flotiq import [flotiqApiKey] .
-    ```
-    
-    It will add 4 images and 2 recipes to your Flotiq account.
-    
-    _Note: ou need to put your Read and write API key as the `flotiqApiKey` for import to work. You don't need the `Recipe` content type in your account. If you already have recipes with ids `recipe-1` and `recipe-2` they will be overwritten._
-   
-1.  **Open the source code and start editing!**
-    
-    Your site is now running at [http://localhost:8000](http://localhost:8000)!
-    
-    _Note: You'll also see a second link: _[http://localhost:8000/___graphql](http://localhost:8000/___graphql)`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-    
-    Open a project directory in your code editor of choice and edit `src/templates/index.js`. Save your changes and the browser will update in real time!
+👤 **Patrick Gallagher**
 
-1. **Manage your recipes using Flotiq editor**
-      
-    You can now easily manage your recipes using [Flotiq editor](https://editor.flotiq.com)
-    
-    ![Managing recipes using Flotiq](docs/manage-recipes.png)
+-   Website: https://patrickgallagher.dev
+    -   Twitter: [@pi0neerpat](https://twitter.com/pi0neerpat)
+    -   GitHub: [@pi0neerpat](https://github.com/pi0neerpat)
 
-## Deploy
+## Show your support
 
-  You can deploy this project to Heroku in 3 minutes:
+Give a ⭐️ if this project helped you!
 
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/flotiq/gatsby-starter-recipes)
-  
-  Or to Netlify:
-  
-  [![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/flotiq/gatsby-starter-recipes)
-  
-## Collaborating
+---
 
-   If you wish to to talk with us about this project, feel free to hop on our [![Discord Chat](https://img.shields.io/discord/682699728454025410.svg)](https://discord.gg/FwXcHnX).
-   
-   If you found a bug, please report it in [issues](https://github.com/flotiq/gatsby-starter-recipes/issues).
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
