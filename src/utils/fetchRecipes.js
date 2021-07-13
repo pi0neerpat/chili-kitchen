@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby"
 
 const fetchRecipes = () => {
     const recipeDetails = useStaticQuery(
@@ -52,22 +52,22 @@ const fetchRecipes = () => {
                 }
             }
         `
-    );
+    )
     return recipeDetails.recipes.edges.map((recipe) => {
         const image = recipeDetails.heroes.edges.find(
             (img) =>
-                img.node.name === "hero" &&
+                img.node.name === `hero` &&
                 img.node.fields.slug.includes(
-                    recipe.node.fields.slug.replace(/\/recipe\//, "")
+                    recipe.node.fields.slug.replace(/\/recipe\//, ``)
                 )
-        );
+        )
         return {
             name: recipe.node.fields.name,
             slug: recipe.node.fields.slug,
             image,
             ...recipe.node.fields.content,
-        };
-    });
-};
+        }
+    })
+}
 
-export default fetchRecipes;
+export default fetchRecipes

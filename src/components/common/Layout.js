@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import Logo from '../../images/logo.png';
+import Logo from '../../images/logo.png'
 
 // Styles
 import '../../styles/app.css'
@@ -18,11 +18,11 @@ import '../../styles/app.css'
 const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
     const site = {
-        "title": 'Bon Apetit!',
-        'subtitle': 'Recipes with Flotiq',
-        'twitterUrl': 'https://twitter.com/flotiq',
-        'facebookUrl': 'https://www.facebook.com/Flotiq-104200727751200/',
-        'siteUrl': ''
+        "title": `Bon Apetit!`,
+        'subtitle': `Recipes with Flotiq`,
+        'twitterUrl': `https://twitter.com/flotiq`,
+        'facebookUrl': `https://www.facebook.com/Flotiq-104200727751200/`,
+        'siteUrl': ``,
     }
 
     return (
@@ -96,7 +96,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
-    isHome: PropTypes.bool
+    isHome: PropTypes.bool,
 }
 
 const DefaultLayoutSettingsQuery = props => (
