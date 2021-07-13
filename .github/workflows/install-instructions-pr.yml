@@ -34,11 +34,11 @@ jobs:
           body: |
             ### 📦 Dappy Package Installation
 
-            This app relies on Dappy for making web3 transactions. Dappy is currently in private beta. 
+            This app uses [Dappy](https://dappy.dev) for making web3 transactions. Dappy is currently in private beta. 
 
-            <details><summary>:star: Follow these instructions to request access</summary>
+            <details><summary>:point_left: Follow these instructions to request access</summary>
 
-            1. DM Patrick with your npm username, and wait for him to grant you access.
+            1. Send a DM to @pi0neerpat with your npm username, and wait for access.
             2. Run the following command:
 
             ```bash
@@ -53,4 +53,6 @@ jobs:
             @pi0neerpat:registry=https://npm.patrickgallagher.dev
             //npm.patrickgallagher.dev/:_authToken=<your-secret>
             ```
+
+            You should now be able to run `yarn install` successfully!
             </details>
