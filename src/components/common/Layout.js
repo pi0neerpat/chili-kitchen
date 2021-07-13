@@ -37,29 +37,29 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                 <div className="viewport-top">
                     {/* The main header section on top of the screen */}
                     <header className="site-head">
-                    <div className="site-mast">
-                                <div className="site-mast-left">
-                                    <Link to="/">
-                                        <img className="site-logo" src={ Logo } alt="Chili Kitchen Logo" />
-                                    </Link>
-                                </div>
-                                <div className="site-mast-right">
-                                    <a href="/about" className="site-banner-title">Connect</a>
-                                </div>
+                        <div className="site-mast">
+                            <div className="site-mast-left">
+                                <Link to="/">
+                                    <img className="site-logo" src={Logo} alt="Chili Kitchen Logo" />
+                                </Link>
                             </div>
+                            <div className="site-mast-right">
+                                <a href="/about" className="site-banner-title">Connect</a>
+                            </div>
+                        </div>
                         <div className="container">
-                            
-                            { isHome ?
+
+                            {isHome ?
                                 <div><div className="button-container"></div>
-                                <div className="site-banner">
-                                    {/* empty div for space */}
-                                </div>
-                                <div className="site-banner">
-                                    <a href="/about" className="site-banner-title">About the project</a>
-                                </div>
+                                    <div className="site-banner">
+                                        {/* empty div for space */}
+                                    </div>
+                                    <div className="site-banner">
+                                        <a href="/about" className="site-banner-title">About the project</a>
+                                    </div>
                                 </div>
 
-                                 :
+                                :
                                 null}
                             <nav className="site-nav">
                                 <div className="site-nav-left">
