@@ -1,35 +1,33 @@
-import React, { useContext, useState } from "react";
-import { graphql } from "gatsby";
-import Helmet from "react-helmet";
-import Img from "gatsby-image";
+import React, { useContext, useState } from "react"
+import { graphql } from "gatsby"
+import Helmet from "react-helmet"
+import Img from "gatsby-image"
 
-import { Layout } from "../components/common";
-import { Context } from "@providers/Context";
-import fetchRecipes from "@utils/fetchRecipes";
+import { Layout } from "../components/common"
+import { Context } from "@providers/Context"
+import fetchRecipes from "@utils/fetchRecipes"
 
 const Post = ({ pageContext }) => {
     // Step 1. Load this recipe's details
-    const recipes = fetchRecipes();
+    const recipes = fetchRecipes()
     const post = Object.entries(recipes).find(
         ([, item]) => item.slug === pageContext.slug
-    )[1];
+    )[1]
 
     // Step 2. Load this farm's data from Context (DataProvider)
-    const [context] = useContext(Context);
-    const { allFarmsData } = context;
-    const [farmData, setFarmData] = useState({});
+    const [context] = useContext(Context)
+    const { allFarmsData } = context
+    const [farmData, setFarmData] = useState({})
     const parseFarmData = () => {
-        const data = Object.entries(allFarmsData).find(([, item]) => {
-            return item.details.slug === pageContext.slug;
-        })[1];
+        const data = Object.entries(allFarmsData).find(([, item]) => item.details.slug === pageContext.slug)[1]
         setFarmData({
             ...data,
-        });
-    };
+        })
+    }
 
     React.useEffect(() => {
-        allFarmsData && parseFarmData();
-    }, [allFarmsData]);
+        allFarmsData && parseFarmData()
+    }, [allFarmsData])
 
     return (
         <>
@@ -54,7 +52,7 @@ const Post = ({ pageContext }) => {
                             <h4>
                                 <div>APR: {farmData?.interestRate}%</div>
                                 <div>
-                                    Tokens Locked:{" "}
+                                    Tokens Locked:{` `}
                                     {farmData?.lockedAmount?.toLocaleString()}
                                 </div>
                                 <div>Servings: {post.servings} meals</div>
@@ -83,10 +81,10 @@ const Post = ({ pageContext }) => {
                                             >
                                                 <span>
                                                     <strong>
-                                                        {" "}
+                                                        {` `}
                                                         {
                                                             ingredient.product
-                                                        }{" "}
+                                                        }{` `}
                                                     </strong>
                                                     (
                                                     {`${ingredient.amount} ${ingredient.unit}`}
@@ -122,7 +120,7 @@ const Post = ({ pageContext }) => {
                                                         alt={post.name}
                                                     />
                                                 ) : (
-                                                    ""
+                                                    ``
                                                 )}
                                             </div>
                                         </div>
@@ -136,10 +134,10 @@ const Post = ({ pageContext }) => {
                 </div>
             </Layout>
         </>
-    );
-};
+    )
+}
 
-export default Post;
+export default Post
 
 // export const recipeQuery = graphql`
 //       query getRecipeImage($recipeGroupName: String!) {

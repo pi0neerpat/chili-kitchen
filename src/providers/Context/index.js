@@ -1,15 +1,15 @@
-import React from "react";
+import React from "react"
 
-const Context = React.createContext();
+const Context = React.createContext()
 
 const ContextProvider = ({ children }) => {
-    const [state, setState] = React.useState({});
+    const [state, setState] = React.useState({})
 
     return (
         <Context.Provider value={[state, setState]}>
             {children}
         </Context.Provider>
-    );
-};
+    )
+}
 
-export { ContextProvider, Context };
+export { ContextProvider, Context }

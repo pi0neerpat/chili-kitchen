@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import Img from "gatsby-image";
+import React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 // import Img from "gatsby-image";
 import CookingTime from "../../images/clock-regular.svg";
 import Servings from "../../images/user-solid.svg";
@@ -9,7 +9,7 @@ import ScovilleMeter from "../ScovilleMeter";
 
 
 const PostCard = ({ post }) => {
-    const url = `${post.slug}/`;
+    const url = `${post.slug}/`
 
     return (
         <Link to={url} className="post-card">
@@ -30,7 +30,7 @@ const PostCard = ({ post }) => {
                         className="post-card-tag-icon"
                         alt="Servings"
                         src={Servings}
-                    />{" "}
+                    />{` `}
                     {post.servings}
                 </div>
                 <div>
@@ -38,8 +38,8 @@ const PostCard = ({ post }) => {
                         className="post-card-tag-icon"
                         alt="Cooking time"
                         src={CookingTime}
-                    />{" "}
-                    {post.cookingTime}{" "}
+                    />{` `}
+                    {post.cookingTime}{` `}
                 </div>
                 <div>
                     <ScovilleMeter />
@@ -50,8 +50,8 @@ const PostCard = ({ post }) => {
                 <div className="post-card-footer-right"></div>
             </footer>
         </Link>
-    );
-};
+    )
+}
 
 PostCard.propTypes = {
     post: PropTypes.shape({
@@ -60,6 +60,6 @@ PostCard.propTypes = {
         image: PropTypes.object,
         description: PropTypes.string.isRequired,
     }).isRequired,
-};
+}
 
-export default PostCard;
+export default PostCard
