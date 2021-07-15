@@ -23,6 +23,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
         'twitterUrl': 'https://twitter.com/flotiq',
         'facebookUrl': 'https://www.facebook.com/Flotiq-104200727751200/',
         'siteUrl': ''
+
     }
 
     return (
@@ -96,7 +97,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
-    isHome: PropTypes.bool
+    isHome: PropTypes.bool,
 }
 
 const DefaultLayoutSettingsQuery = props => (

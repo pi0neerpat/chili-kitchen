@@ -1,6 +1,6 @@
-const path = require(`path`);
-const dotenv = require(`dotenv`);
-dotenv.config();
+const path = require(`path`)
+const dotenv = require(`dotenv`)
+dotenv.config()
 
 /**
  * This is the place where you can tell Gatsby which plugins to use
@@ -51,11 +51,11 @@ module.exports = {
             resolve: `gatsby-plugin-alias-imports`,
             options: {
                 alias: {
-                    src: "src",
-                    "@components": "src/components",
-                    "@utils": "src/utils",
-                    "@content": "content/",
-                    "@providers": "src/providers",
+                    src: `src`,
+                    "@components": `src/components`,
+                    "@utils": `src/utils`,
+                    "@content": `content/`,
+                    "@providers": `src/providers`,
                 },
             },
         },
@@ -64,4 +64,4 @@ module.exports = {
         `gatsby-plugin-force-trailing-slashes`,
         `gatsby-plugin-offline`,
     ],
-};
+}
