@@ -44,6 +44,9 @@ const PostCard = ({ post }) => {
                 <div>
                     <ScovilleMeter />
                 </div>
+                <div>
+                    <ScovilleMeter />
+                </div>
             </section>
             <footer className="post-card-footer">
                 <div className="post-card-footer-left"></div>

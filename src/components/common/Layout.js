@@ -4,9 +4,6 @@ import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import Logo from '../../images/chili-kitchen-logo.png';
 
-
-
-
 // Styles
 import '../../styles/app.css'
 
@@ -21,7 +18,6 @@ import '../../styles/app.css'
 const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
     const site = {
-
         "title": 'CHILI Kitchen',
         'subtitle': 'Recipes with Flotiq',
         'twitterUrl': 'https://twitter.com/flotiq',
