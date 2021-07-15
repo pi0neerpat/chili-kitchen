@@ -43,7 +43,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                                 </Link>
                             </div>
                             <div className="site-mast-right">
-                                <a href="/about" className="site-banner-title">Connect</a>
+                                <a href="/about" className="site-banner-title">About the Project</a>
                             </div>
                         </div>
                     <header className="site-head">
@@ -54,9 +54,6 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                                 <div><div className="button-container"></div>
                                     <div className="site-banner">
                                         {/* empty div for space */}
-                                    </div>
-                                    <div className="site-banner">
-                                        <a href="/about" className="site-banner-title">About the project</a>
                                     </div>
                                 </div>
 
