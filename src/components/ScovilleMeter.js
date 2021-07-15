@@ -9,7 +9,7 @@ const ScovilleMeter = () => (
 		<img className="red-scoville-chili" src={RedScoville} alt="Red Scoville Chili" />
 		<img className="red-scoville-chili" src={RedScoville} alt="Red Scoville Chili" />
 		<img className="red-scoville-chili" src={RedScoville} alt="Red Scoville Chili" />
-		<img className="red-scoville-chili" src={RedScoville} alt="Red Scoville Chili" />
+		<img className="grey-scoville-chili" src={GreyScoville} alt="Grey Scoville Chili" />
 	</div>
 )
 
