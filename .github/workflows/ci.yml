@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: 14.x
           registry-url: https://npm.patrickgallagher.dev
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive --ignore-scripts --no-progress
