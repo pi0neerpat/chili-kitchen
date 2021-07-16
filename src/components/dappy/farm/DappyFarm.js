@@ -11,19 +11,15 @@ const DappyFarm = ({ dappyConfig }) => {
   const config = new DappyConfig(dappyConfig)
   console.log(dappyConfig)
   console.log(config.options)
-  return null
-  // return (
-  //   <ThemeProvider>
-  //     <DappyBorderContainer
-  //       color={dappyConfig.BACKGROUND_COLOR}
-  //       isDappyActive={isDappyActive}
-  //     >
-  //       <DappyLayoutMaster>
-  //         <Dappy options={config.options} debug />
-  //       </DappyLayoutMaster>
-  //     </DappyBorderContainer>
-  //   </ThemeProvider>
-  // )
+  return (
+    <ThemeProvider>
+      <DappyBorderContainer color={dappyConfig.BACKGROUND_COLOR}>
+        <DappyLayoutMaster>
+          <Dappy options={config.options} debug />
+        </DappyLayoutMaster>
+      </DappyBorderContainer>
+    </ThemeProvider>
+  )
 }
 
 export default DappyFarm
