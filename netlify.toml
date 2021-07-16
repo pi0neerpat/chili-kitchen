@@ -1,6 +1,0 @@
-[build]
-  command = "gatsby build"
-  publish = "public/"
-
-[template.environment]
-    GATSBY_FLOTIQ_API_KEY="YOUR FLOTIQ API KEY"
