@@ -5,6 +5,7 @@ module.exports = {
   name: `Fish n Chili`,
   scoville: 2,
   dappyConfig: {
+    id: `fish-n-chili`,
     ...web3Details,
     IMPACT_TEXT: `rCHILI earned`,
     BACKGROUND_COLOR: `#CEE7E6`,

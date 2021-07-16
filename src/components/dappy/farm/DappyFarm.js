@@ -8,7 +8,6 @@ import DappyConfig from "./config"
 
 const DappyFarm = ({ config }) => {
   const dappyConfig = new DappyConfig(config)
-
   return (
     <ThemeProvider>
       <DappyBorderContainer color={dappyConfig.BACKGROUND_COLOR}>

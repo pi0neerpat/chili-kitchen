@@ -3,7 +3,8 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { Link, StaticQuery, graphql } from "gatsby"
 import Logo from "../../images/logo.svg"
-
+import SeoBanner from "../../images/seo-banner.png"
+import ImageMeta from "./meta/ImageMeta"
 // Styles
 import "../../styles/app.css"
 
@@ -29,7 +30,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
         <html lang="en" />
         <body className={bodyClass} />
       </Helmet>
-
+      <ImageMeta image={SeoBanner} />
       <div className="viewport">
         <div className="viewport-top">
           {/* The main header section on top of the screen */}
@@ -43,11 +44,13 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                 />
               </Link>
             </div>
-            {/*        <div className="site-mast-right">
+            <div className="site-mast-right">
+              {/*
               <a href="/about" className="site-banner-title">
                 About
               </a>
-            </div> */}
+              */}
+            </div>
           </div>
           <header className="site-head">
             <div className="container">

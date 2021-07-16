@@ -5,6 +5,7 @@ module.exports = {
   name: `Roasted Chili`,
   scoville: 4,
   dappyConfig: {
+    id: `roasted-chili`,
     ...web3Details,
     IMPACT_TEXT: `rCHILI earned`,
     BACKGROUND_COLOR: `#CEE7E6`,
