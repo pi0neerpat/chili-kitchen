@@ -78,7 +78,7 @@ export default class DappyConfig {
         substeps: { default: { component: LoadDefault } },
       },
       silentUnlock: {
-        ...unlock,
+        ...this.unlock,
         hideNav: true,
         hide: true,
         // skippable: true, // Not sure why this is needed. W/o it skips the next step
@@ -87,7 +87,7 @@ export default class DappyConfig {
         category: `info`,
         substeps: { default: { component: InitialDefault } },
       },
-      unlock,
+      unlock: this.unlock,
       checkout: {
         category: `web3`,
         type: `tx`,

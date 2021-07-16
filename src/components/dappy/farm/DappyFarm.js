@@ -4,23 +4,26 @@ import { DappyLayoutMaster, DappyBorderContainer } from "@pi0neerpat/feather"
 import { ThemeProvider } from "@pi0neerpat/snowflake"
 
 import "../i18n"
-import options from "./options"
+import DappyConfig from "./config"
 
 const DappyFarm = ({ dappyConfig }) => {
-  const { BACKGROUND_COLOR } = dappyConfig
-
-  options.return(
-    <ThemeProvider>
-      <DappyBorderContainer
-        color={BACKGROUND_COLOR}
-        isDappyActive={isDappyActive}
-      >
-        <DappyLayoutMaster>
-          <Dappy options={options} debug />
-        </DappyLayoutMaster>
-      </DappyBorderContainer>
-    </ThemeProvider>
-  )
+  // Inject details into config (eg. network, addresses, etc)
+  const config = new DappyConfig(dappyConfig)
+  console.log(dappyConfig)
+  console.log(config.options)
+  return null
+  // return (
+  //   <ThemeProvider>
+  //     <DappyBorderContainer
+  //       color={dappyConfig.BACKGROUND_COLOR}
+  //       isDappyActive={isDappyActive}
+  //     >
+  //       <DappyLayoutMaster>
+  //         <Dappy options={config.options} debug />
+  //       </DappyLayoutMaster>
+  //     </DappyBorderContainer>
+  //   </ThemeProvider>
+  // )
 }
 
 export default DappyFarm

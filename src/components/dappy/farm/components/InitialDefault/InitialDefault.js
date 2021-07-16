@@ -1,28 +1,29 @@
 /* eslint-disable react/jsx-wrap-multilines */
 
-import React, { useEffect, useState } from 'react'
-import { useTranslation, Trans } from 'react-i18next'
+import React, { useEffect, useState } from "react"
+import { useTranslation, Trans } from "react-i18next"
 
-import { formatUnits } from '@ethersproject/units'
-import { isProduction } from 'src/helpers'
+import { formatUnits } from "@ethersproject/units"
 
 import {
   InfoFarmImpactActive,
   InfoFarmImpactInactive,
-} from '@pi0neerpat/unlock'
-import { Link } from '@pi0neerpat/snowflake'
+} from "@pi0neerpat/unlock"
+import { Link } from "@pi0neerpat/snowflake"
 
 import {
   BACKGROUND_COLOR,
   FOREGROUND_COLOR,
   POOL_ADDRESS,
   NETWORK,
-} from '../../../constants'
+} from "../../../constants"
 
-const LEFT_IMAGE = '/left-and-right-image.png'
-const RIGHT_IMAGE = '/left-and-right-image.png'
+const LEFT_IMAGE = `/left-and-right-image.png`
+const RIGHT_IMAGE = `/left-and-right-image.png`
 
 const BASICALLY_ZERO_INTEREST_RATE = 0.00000001
+
+const isProduction = process.env.NODE_ENV === `production`
 
 const InitialDefault = ({
   xdaiRpcUrl,
@@ -32,7 +33,7 @@ const InitialDefault = ({
   user,
   ...rest
 }) => {
-  const { t } = useTranslation('farm')
+  const { t } = useTranslation(`farm`)
   const [isGettingRewards, setIsGettingRewards] = useState(false)
 
   const interestRateRewardsText = farmData.interestRateRewards?.toFixed(0)
@@ -67,7 +68,7 @@ const InitialDefault = ({
       <InfoFarmImpactActive
         impactText={
           <Trans i18nKey="farm:yourEarningsFrom">
-            rCHILI earned from your staked{' '}
+            rCHILI earned from your staked{` `}
             {{ lockedAmount: userData?.lockedAmount?.toLocaleString() }} CHILI
           </Trans>
         }
@@ -86,8 +87,8 @@ const InitialDefault = ({
         foregroundColor={FOREGROUND_COLOR}
         imageLeftSrc={{ src: LEFT_IMAGE }}
         imageRightSrc={{ src: RIGHT_IMAGE }}
-        imageLeftAlt={t('A cute litte flame ball dude')}
-        imageRightAlt={t('A cute litte flame ball dude')}
+        imageLeftAlt={t(`A cute litte flame ball dude`)}
+        imageRightAlt={t(`A cute litte flame ball dude`)}
         {...rest}
       />
     )
@@ -106,10 +107,10 @@ const InitialDefault = ({
       foregroundColor={FOREGROUND_COLOR}
       imageLeftSrc={{ src: LEFT_IMAGE }}
       imageRightSrc={{ src: RIGHT_IMAGE }}
-      imageLeftAlt={t('A cute litte flame ball dude')}
-      imageRightAlt={t('A cute litte flame ball dude')}
-      footerText={t('Cancel anytime')}
-      buttonText={t('Start farming')}
+      imageLeftAlt={t(`A cute litte flame ball dude`)}
+      imageRightAlt={t(`A cute litte flame ball dude`)}
+      footerText={t(`Cancel anytime`)}
+      buttonText={t(`Start farming`)}
       {...rest}
     />
   )

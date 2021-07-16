@@ -29,6 +29,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Perform Sharp post-install scripts
+        #  Only necessary since we use --ignore-scripts
         run: npm rebuild sharp
 
       - name: yarn build

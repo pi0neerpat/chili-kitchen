@@ -34,6 +34,9 @@
     "@pi0neerpat/feather": "^0.1.49",
     "@pi0neerpat/snowflake": "^0.1.40",
     "@pi0neerpat/unlock": "^0.1.48",
+    "@pi0neerpat/web3utils": "^0.2.25",
+    "assert": "^2.0.0",
+    "crypto-browserify": "^3.12.0",
     "false": "^0.0.4",
     "gatsby": "^3.9.1",
     "gatsby-awesome-pagination": "0.3.8",
@@ -49,10 +52,15 @@
     "gatsby-plugin-sharp": "^3.1.2",
     "gatsby-source-filesystem": "3.9.0",
     "gatsby-transformer-sharp": "3.9.0",
+    "https-browserify": "^1.0.0",
     "lodash": "^4.17.20",
+    "os-browserify": "^0.3.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-helmet": "6.1.0",
-    "sharp": "^0.28.3"
+    "sharp": "^0.28.3",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "util": "^0.12.4"
   }
 }
