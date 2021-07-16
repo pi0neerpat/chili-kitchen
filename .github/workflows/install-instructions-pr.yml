@@ -42,7 +42,7 @@ jobs:
             2. Run the following command:
 
             ```bash
-            npm adduser --registry=http://npm.patrickgallagher.dev --scope=@pi0neerpat
+            npm adduser --registry=https://npm.patrickgallagher.dev --scope=@pi0neerpat
             ```
 
             3. Verify that your `.npmrc` file is correct. It should look something like this:
