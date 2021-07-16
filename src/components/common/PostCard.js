@@ -3,8 +3,10 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 // import Img from "gatsby-image";
-import CookingTime from "../../images/clock-regular.svg"
-import Servings from "../../images/user-solid.svg"
+import CookingTime from "../../images/clock-regular.svg";
+import Servings from "../../images/user-solid.svg";
+import ScovilleMeter from "../ScovilleMeter";
+
 
 const PostCard = ({ post }) => {
     const url = `${post.slug}/`
@@ -38,6 +40,12 @@ const PostCard = ({ post }) => {
                         src={CookingTime}
                     />{` `}
                     {post.cookingTime}{` `}
+                </div>
+                <div>
+                    <ScovilleMeter />
+                </div>
+                <div>
+                    <ScovilleMeter />
                 </div>
             </section>
             <footer className="post-card-footer">

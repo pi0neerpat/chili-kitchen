@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import Logo from '../../images/logo.png'
+import Logo from '../../images/chili-kitchen-logo.png';
 
 // Styles
 import '../../styles/app.css'
@@ -18,11 +18,12 @@ import '../../styles/app.css'
 const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
     const site = {
-        "title": `Bon Apetit!`,
-        'subtitle': `Recipes with Flotiq`,
-        'twitterUrl': `https://twitter.com/flotiq`,
-        'facebookUrl': `https://www.facebook.com/Flotiq-104200727751200/`,
-        'siteUrl': ``,
+        "title": 'CHILI Kitchen',
+        'subtitle': 'Recipes with Flotiq',
+        'twitterUrl': 'https://twitter.com/flotiq',
+        'facebookUrl': 'https://www.facebook.com/Flotiq-104200727751200/',
+        'siteUrl': ''
+
     }
 
     return (
@@ -36,33 +37,33 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
                 <div className="viewport-top">
                     {/* The main header section on top of the screen */}
-                    <header className="site-head">
-                        <div className="container">
-                            <div className="site-mast">
-                                <div className="site-mast-left">
-                                    <Link to="/">
-                                        <img className="site-logo" src={ Logo } alt="Recipes with Flotiq.com" />
-                                    </Link>
-                                </div>
-                                <div className="site-mast-right">
-                                    { site.twitterUrl && <a href={ site.twitterUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/twitter.svg" alt="Twitter" /></a>}
-                                    { site.facebookUrl && <a href={ site.facebookUrl } className="site-nav-item" target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/facebook.svg" alt="Facebook" /></a>}
-                                    <a className="site-nav-item" href={ `https://feedly.com/i/subscription/feed/${site.siteUrl}/rss/` } target="_blank" rel="noopener noreferrer"><img className="site-nav-icon" src="/images/icons/rss.svg" alt="RSS Feed" /></a>
-                                </div>
+                    <div className="site-mast">
+                            <div className="site-mast-left">
+                                <Link to="/">
+                                    <img className="site-logo" src={Logo} alt="Chili Kitchen Logo" />
+                                </Link>
                             </div>
-                            { isHome ?
-                                <div className="site-banner">
-                                    <h1 className="site-banner-title">{site.title}</h1>
-                                    <p className="site-banner-desc">{site.subtitle}</p>
-                                </div> :
+                            <div className="site-mast-right">
+                                <a href="/about" className="site-banner-title">About the Project</a>
+                            </div>
+                        </div>
+                    <header className="site-head">
+                        
+                        <div className="container">
+
+                            {isHome ?
+                                <div><div className="button-container"></div>
+                                    <div className="site-banner">
+                                        {/* empty div for space */}
+                                    </div>
+                                </div>
+
+                                :
                                 null}
-                            <nav className="site-nav">
+                            {/* <nav className="site-nav">
                                 <div className="site-nav-left">
                                 </div>
-                                <div className="site-nav-right">
-                                    <Link className="site-nav-button" to="/about">About</Link>
-                                </div>
-                            </nav>
+                            </nav> */}
                         </div>
                     </header>
 
@@ -78,10 +79,10 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2020 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                <Link to="/">{site.title}</Link>
                             </div>
                             <div className="site-foot-nav-right">
-                                <a href="https://flotiq.com">Adapted to Flotiq.com</a>
+                                <a href="https://metacartel.org">MetaCartel.org</a>
                             </div>
                         </div>
                     </footer>
