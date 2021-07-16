@@ -22,6 +22,7 @@ const fetchRecipes = () => {
                     BACKGROUND_COLOR
                     FOREGROUND_COLOR
                   }
+                  scoville
                   description
                   ingredients {
                     amount

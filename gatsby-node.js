@@ -102,9 +102,13 @@ exports.createPages = async ({ graphql, actions }) => {
 // https://stackoverflow.com/questions/67333737/add-crypto-browserify-to-gatsby-project
 exports.onCreateWebpackConfig = ({ stage, actions, loaders }) => {
   actions.setWebpackConfig({
-    rules: {
-      test: /@pi0neerpat\/dappy/,
-      use: loaders.null(),
+    module: {
+      rules: [
+        {
+          test: /@pi0neerpat\/dappy/,
+          use: loaders.null(),
+        },
+      ],
     },
     resolve: {
       fallback: {

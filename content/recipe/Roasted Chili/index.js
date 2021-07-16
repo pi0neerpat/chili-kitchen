@@ -3,6 +3,7 @@ const web3Details = require(`./web3Details`)
 module.exports = {
   id: `recipe-1`,
   name: `Roasted Chili`,
+  scoville: 4,
   dappyConfig: {
     ...web3Details,
     IMPACT_TEXT: `rCHILI earned`,
