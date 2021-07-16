@@ -6,16 +6,14 @@ import { ThemeProvider } from "@pi0neerpat/snowflake"
 import "../i18n"
 import DappyConfig from "./config"
 
-const DappyFarm = ({ dappyConfig }) => {
-  // Inject details into config (eg. network, addresses, etc)
-  const config = new DappyConfig(dappyConfig)
-  console.log(dappyConfig)
-  console.log(config.options)
+const DappyFarm = ({ config }) => {
+  const dappyConfig = new DappyConfig(config)
+
   return (
     <ThemeProvider>
       <DappyBorderContainer color={dappyConfig.BACKGROUND_COLOR}>
         <DappyLayoutMaster>
-          <Dappy options={config.options} debug />
+          <Dappy options={dappyConfig.options} debug />
         </DappyLayoutMaster>
       </DappyBorderContainer>
     </ThemeProvider>

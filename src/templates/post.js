@@ -40,9 +40,9 @@ const Post = ({ pageContext }) => {
       <Layout>
         <div className="container">
           <article className="content">
-            <DappyFarm dappyConfig={post.dappyConfig} />
             <section className="post-full-content">
               <h1 className="content-title">{post.name}</h1>
+              <DappyFarm config={post.dappyConfig} />
               <h4>
                 <div>APR: {farmData?.interestRate}%</div>
                 <div>
