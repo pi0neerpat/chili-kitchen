@@ -22,7 +22,7 @@ const CheckoutDefault = ({ isWithdrawing, isClaiming, ...rest }) => {
   if (isClaiming)
     return (
       <Web3TxCheckoutFarmWithdraw
-        titleText={'Claim Rewards'}
+        titleText={`Claim Rewards`}
         buttonText="Claim rCHILI"
         {...rest}
       />
@@ -30,7 +30,7 @@ const CheckoutDefault = ({ isWithdrawing, isClaiming, ...rest }) => {
   if (isWithdrawing)
     return (
       <Web3TxCheckoutFarmWithdraw
-        titleText={'Withdraw'}
+        titleText={`Withdraw`}
         buttonText="Withdraw CHILI"
         {...rest}
       />

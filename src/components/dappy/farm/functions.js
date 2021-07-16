@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-/* eslint-disable i18next/no-literal-string */
 import { formatUnits } from "@ethersproject/units"
 import { getPoolUser } from "@pi0neerpat/web3utils"
 

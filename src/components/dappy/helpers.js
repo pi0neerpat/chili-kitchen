@@ -13,23 +13,23 @@ export const onWalletUnlock = ({ walletAddress }) => {
 
 export const walletList = [
   {
-    name: 'Metamask',
-    iconName: 'metamask',
-    iconColor: '#F58C25',
-    id: 'metamask',
+    name: `Metamask`,
+    iconName: `metamask`,
+    iconColor: `#F58C25`,
+    id: `metamask`,
   },
   {
-    name: 'Coinbase Wallet',
-    iconName: 'coinbase-wallet',
-    iconColor: '#2F5CE2',
-    id: 'walletLink',
+    name: `Coinbase Wallet`,
+    iconName: `coinbase-wallet`,
+    iconColor: `#2F5CE2`,
+    id: `walletLink`,
   },
   {
-    name: 'Mobile Wallet',
-    iconName: 'mobile-wallet',
-    iconColor: '#3B99FC',
-    id: 'walletConnect',
-    subText: 'Trust, Argent, Rainbow, Others',
+    name: `Mobile Wallet`,
+    iconName: `mobile-wallet`,
+    iconColor: `#3B99FC`,
+    id: `walletConnect`,
+    subText: `Trust, Argent, Rainbow, Others`,
   },
 ]
 

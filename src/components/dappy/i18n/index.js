@@ -9,25 +9,25 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'en',
-    ns: ['vault', 'foundation', 'component', 'view', 'dappy'],
+    fallbackLng: `en`,
+    ns: [`vault`, `foundation`, `component`, `view`, `dappy`],
     // debug: process.env.NODE_ENV !== 'production',
-    defaultNS: 'vault',
+    defaultNS: `vault`,
     keySeparator: false, // Required else will not work when a period "." is included in a key
     debug: false,
     whitelist: languageData.map((language) => language.id),
     detection: {
       // options for i18next-browser-languagedetector
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
+      order: [`localStorage`, `navigator`],
+      caches: [`localStorage`],
     },
     returnEmptyString: false,
     // saveMissing: true, // send not translated keys to endpoint
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      loadPath: `/locales/{{lng}}/{{ns}}.json`,
       // addPath: "http://localhost:3000/locales/add/{{lng}}/{{ns}}.missing.json",
     },
-    load: 'languageOnly',
+    load: `languageOnly`,
     function(error) {
       // TODO: Remove eslint-disable
       /* eslint-disable no-console */

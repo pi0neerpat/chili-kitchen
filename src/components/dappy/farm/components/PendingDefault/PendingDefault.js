@@ -3,8 +3,8 @@ import React from 'react'
 import { Web3PendingFull } from '@pi0neerpat/unlock'
 import { FOREGROUND_COLOR } from '../../../constants'
 
-const FARMING_IMAGE = '/farming.png'
-const ICON_IMAGE = '/official-logo.png'
+const FARMING_IMAGE = `/farming.png`
+const ICON_IMAGE = `/official-logo.png`
 
 const PendingDefault = ({
   onSubmit,
@@ -15,8 +15,7 @@ const PendingDefault = ({
   isWithdrawing,
   isClaiming,
   ...rest
-}) => {
-  return (
+}) => (
     <Web3PendingFull
       isWithdrawing={isWithdrawing}
       isClaiming={isClaiming}
@@ -30,6 +29,5 @@ const PendingDefault = ({
       {...rest}
     />
   )
-}
 
 export default PendingDefault
