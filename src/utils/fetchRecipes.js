@@ -13,15 +13,14 @@ const fetchRecipes = () => {
                 name
                 slug
                 content {
-                  dappyConfig {
+                  web3 {
                     NETWORK
                     POOL_ADDRESS
                     STAKING_TOKEN_ADDRESS
                     REWARD_TOKEN_ADDRESS
-                    IMPACT_TEXT
-                    BACKGROUND_COLOR
-                    FOREGROUND_COLOR
                   }
+                  oneClickDappSrc
+                  scoville
                   description
                   ingredients {
                     amount

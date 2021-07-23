@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-recipes",
-  "description": "A Gatsby starter to build your own recipes page with Flotiq and Gatsby.",
+  "name": "chili-kitchen",
+  "description": "Brought to you by MetaCartel",
   "version": "1.0.0",
   "license": "MIT",
   "author": "Patrick Gallagher & Chair",
@@ -17,6 +17,7 @@
     "serve": "gatsby build && NODE_ENV=production gatsby serve",
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "start": "gatsby develop -H 0.0.0.0",
     "lint": "eslint . --ext .js --cache",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -29,12 +30,6 @@
   "dependencies": {
     "@ethersproject/providers": "^5.4.0",
     "@ethersproject/units": "^5.4.0",
-    "@pi0neerpat/daosquare": "^0.1.48",
-    "@pi0neerpat/dappy": "^0.2.25",
-    "@pi0neerpat/feather": "^0.1.49",
-    "@pi0neerpat/snowflake": "^0.1.40",
-    "@pi0neerpat/unlock": "^0.1.48",
-    "@pi0neerpat/web3utils": "^0.2.25",
     "assert": "^2.0.0",
     "crypto-browserify": "^3.12.0",
     "false": "^0.0.4",

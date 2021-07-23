@@ -14,45 +14,21 @@
 
 ## Install
 
-### 📦 Dappy Package Installation
-
-This app uses [Dappy](https://dappy.dev) for making web3 transactions. Dappy is currently in private beta.
-
-<details><summary>:point_left: Follow these instructions to request access</summary>
-
-1. Send a DM to @pi0neerpat with your npm username, and wait for access.
-2. Run the following command:
-
-```bash
-npm adduser --registry=https://npm.patrickgallagher.dev --scope=@pi0neerpat
-```
-
-3. Verify that your `.npmrc` file is correct. It should look something like this:
-
-```
-cat ~/.npmrc
-
-@pi0neerpat:registry=https://npm.patrickgallagher.dev
-//npm.patrickgallagher.dev/:_authToken=<your-secret>
-```
-
-You should now be able to run `yarn install` successfully!
-
-</details>
+`yarn`
 
 ## Usage
 
 ```sh
-gatsby develop
+yarn start
 ```
 
 ## Author
 
 👤 **Patrick Gallagher**
 
--   Website: https://patrickgallagher.dev
-    -   Twitter: [@pi0neerpat](https://twitter.com/pi0neerpat)
-    -   GitHub: [@pi0neerpat](https://github.com/pi0neerpat)
+- Website: https://patrickgallagher.dev
+  - Twitter: [@pi0neerpat](https://twitter.com/pi0neerpat)
+  - GitHub: [@pi0neerpat](https://github.com/pi0neerpat)
 
 ## Show your support
 

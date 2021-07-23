@@ -6,7 +6,6 @@ import Img from "gatsby-image"
 import { Layout } from "../components/common"
 import { Context } from "@providers/Context"
 import fetchRecipes from "@utils/fetchRecipes"
-import DappyFarm from "@components/dappy/farm/DappyFarm"
 
 const Post = ({ pageContext }) => {
   // Step 1. Load this recipe's details
@@ -31,7 +30,7 @@ const Post = ({ pageContext }) => {
   React.useEffect(() => {
     allFarmsData && parseFarmData()
   }, [allFarmsData])
-
+  console.log(post)
   return (
     <>
       <Helmet>
@@ -40,15 +39,16 @@ const Post = ({ pageContext }) => {
       <Layout>
         <div className="container">
           <article className="content">
-            <DappyFarm dappyConfig={post.dappyConfig} />
             <section className="post-full-content">
               <h1 className="content-title">{post.name}</h1>
+              <div className="iframe-wrapper">
+                <iframe
+                  src={post.oneClickDappSrc}
+                  frameBorder="0"
+                  className="iframe"
+                />
+              </div>
               <h4>
-                <div>APR: {farmData?.interestRate}%</div>
-                <div>
-                  Tokens Locked:{` `}
-                  {farmData?.lockedAmount?.toLocaleString()}
-                </div>
                 <div>Servings: {post.servings} meals</div>
                 <div>Cooking time: {post.cookingTime} minutes</div>
               </h4>

@@ -1,56 +1,36 @@
-const web3Details = require(`./web3Details`)
-
 module.exports = {
   id: `recipe-1`,
-  name: `Roasted Chili`,
-  dappyConfig: {
-    ...web3Details,
-    IMPACT_TEXT: `rCHILI earned`,
-    BACKGROUND_COLOR: `#CEE7E6`,
-    FOREGROUND_COLOR: `#d62411`,
+  name: `Roasted CHILI`,
+  scoville: 4,
+  oneClickDappSrc: `http://10.61.141.195:8910/embed/shock-ingrid`,
+  web3: {
+    NETWORK: `matic`,
+    POOL_ADDRESS: `0xFf6fc5951977D8Bf08820664158c9CC9EBA8fA20`,
+    STAKING_TOKEN_ADDRESS: `0x8bab80afddb52f5b581c18324d985013da49569a`,
+    REWARD_TOKEN_ADDRESS: `0x48e1eec032171f871890c86308147032bb246508`,
   },
   steps: [
     {
-      step: `Maecenas lacinia augue quam.`,
+      step: `Place CHILI directly over an open flame until blackened`,
     },
     {
-      step: `Aenean elementum ultricies lectus, et blandit mauris rutrum vel.`,
+      step: `Wrap tightly with paper for 5 minutes, allowing the steam to loosen the skin.`,
     },
     {
-      step: `Nulla vel mauris velit. Nunc at tincidunt lacus, nec aliquet ex. Morbi sed mollis ipsum, et feugiat orci.`,
-    },
-    {
-      step: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin nec risus quam. Morbi et bibendum libero.`,
+      step: `Remove the outer skin and enjoy!`,
     },
   ],
-  servings: 6,
-  cookingTime: `30`,
-  description: `<p>Vivamus venenatis ultrices leo, sit amet commodo ligula consequat in. Suspendisse justo nisi, tristique sit amet ex quis, auctor imperdiet leo. Nullam molestie pellentesque ullamcorper. Sed pretium odio mollis lobortis laoreet. Fusce blandit diam ornare odio laoreet, commodo congue orci interdum.</p>\n\n<p>Phasellus sagittis augue ac dignissim fringilla. Pellentesque convallis vehicula elit ac aliquam. Nunc quis suscipit dolor. Integer vestibulum ligula eu sapien consequat, ac sodales mi maximus. Sed sem ligula, scelerisque ac aliquet non, rutrum quis velit. Praesent scelerisque euismod sem, in lobortis tellus tincidunt ut. Nullam et pellentesque elit.</p>\n`,
+  servings: 3,
+  cookingTime: `10`,
+  description: `<p>Roast your CHILI to produce rCHILI!</p>\n`,
   ingredients: [
     {
       unit: `pcs`,
-      amount: 10,
-      product: `tomato`,
+      amount: 1337,
+      product: `CHILI tokens`,
     },
     {
-      unit: `ml`,
-      amount: 2000,
-      product: `water`,
-    },
-    {
-      unit: `pinch`,
-      amount: 1,
-      product: `salt`,
-    },
-    {
-      unit: `pinch`,
-      amount: 0,
-      product: `pepper`,
-    },
-    {
-      unit: `ml`,
-      amount: 100,
-      product: `cream`,
+      product: `Ethereum Wallet`,
     },
   ],
 }
