@@ -14,6 +14,7 @@ const fetchRecipes = () => {
                 slug
                 content {
                   web3 {
+                    EXPLORER_BASE_URL
                     NETWORK
                     POOL_ADDRESS
                     STAKING_TOKEN_ADDRESS
@@ -29,6 +30,8 @@ const fetchRecipes = () => {
                   }
                   steps {
                     step
+                    imageAlt
+                    imageSrc
                   }
                   cookingTime
                   servings

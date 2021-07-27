@@ -1,13 +1,14 @@
 module.exports = {
-  id: `recipe-1`,
-  name: `Roasted CHILI`,
+  id: `rChili`,
+  name: `rCHILI Farming`,
   scoville: 4,
-  oneClickDappSrc: `http://10.61.141.195:8910/embed/shock-ingrid`,
+  oneClickDappSrc: `https://beta.oneclickdapp.com/embed/chili-farm`,
   web3: {
+    EXPLORER_BASE_URL: `https://polygonscan.com/`,
     NETWORK: `matic`,
     POOL_ADDRESS: `0xFf6fc5951977D8Bf08820664158c9CC9EBA8fA20`,
     STAKING_TOKEN_ADDRESS: `0x8bab80afddb52f5b581c18324d985013da49569a`,
-    REWARD_TOKEN_ADDRESS: `0x48e1eec032171f871890c86308147032bb246508`,
+    REWARD_TOKEN_ADDRESS: `0x48E1EeC032171F871890c86308147032BB246508`,
   },
   steps: [
     {
@@ -20,9 +21,9 @@ module.exports = {
       step: `Remove the outer skin and enjoy!`,
     },
   ],
-  servings: 3,
+  servings: 1,
   cookingTime: `10`,
-  description: `<p>Roast your CHILI to produce rCHILI!</p>\n`,
+  description: `<p>Roast your CHILI to make rCHILI!</p>\n`,
   ingredients: [
     {
       unit: `pcs`,
@@ -31,6 +32,8 @@ module.exports = {
     },
     {
       product: `Ethereum Wallet`,
+      unit: `pcs`,
+      amount: 1,
     },
   ],
 }

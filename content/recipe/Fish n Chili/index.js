@@ -1,56 +1,41 @@
 module.exports = {
   id: `recipe-2`,
-  name: `Fish n CHILI`,
-  scoville: 2,
-  oneClickDappSrc: ``,
+  name: `rCHILI-MATIC SLP Farming`,
+  scoville: 3,
+  oneClickDappSrc: `https://beta.oneclickdapp.com/embed/rchili-matic-farm`,
   web3: {
+    EXPLORER_BASE_URL: `https://polygonscan.com/`,
     NETWORK: `matic`,
-    POOL_ADDRESS: `0xFf6fc5951977D8Bf08820664158c9CC9EBA8fA20`,
-    STAKING_TOKEN_ADDRESS: `0x8bab80afddb52f5b581c18324d985013da49569a`,
-    REWARD_TOKEN_ADDRESS: `0x48e1eec032171f871890c86308147032bb246508`,
+    POOL_ADDRESS: `0x11D168E257B4e1A89EE7Db16d0597176ACe3679c`,
+    STAKING_TOKEN_ADDRESS: `0x34209A5F702a81B62197dbFc36A48c3FE04aF8d7`,
+    REWARD_TOKEN_ADDRESS: `0x48E1EeC032171F871890c86308147032BB246508`,
   },
   steps: [
     {
-      step: `Maecenas lacinia augue quam.`,
+      step: `Fry the fish as desired.`,
+      imageSrc: ``,
+      imageAlt: ``,
     },
     {
-      step: `Aenean elementum ultricies lectus, et blandit mauris rutrum vel.`,
+      step: `Let the rCHILI-MATIC SLP tokens simmer with the crushed garlic for 5 minutes`,
     },
     {
-      step: `Nulla vel mauris velit. Nunc at tincidunt lacus, nec aliquet ex. Morbi sed mollis ipsum, et feugiat orci.`,
-    },
-    {
-      step: `Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin nec risus quam. Morbi et bibendum libero.`,
+      step: `Pour over top of the fish and enjoy!`,
     },
   ],
-  servings: 6,
+  servings: 4,
   cookingTime: `30`,
-  description: `<p>Vivamus venenatis ultrices leo, sit amet commodo ligula consequat in. Suspendisse justo nisi, tristique sit amet ex quis, auctor imperdiet leo. Nullam molestie pellentesque ullamcorper. Sed pretium odio mollis lobortis laoreet. Fusce blandit diam ornare odio laoreet, commodo congue orci interdum.</p>\n\n<p>Phasellus sagittis augue ac dignissim fringilla. Pellentesque convallis vehicula elit ac aliquam. Nunc quis suscipit dolor. Integer vestibulum ligula eu sapien consequat, ac sodales mi maximus. Sed sem ligula, scelerisque ac aliquet non, rutrum quis velit. Praesent scelerisque euismod sem, in lobortis tellus tincidunt ut. Nullam et pellentesque elit.</p>\n`,
+  description: `<p>Get your rCHILI-MATIC SLP tokens by <a href="https://app.sushi.com/add/ETH/0x48E1EeC032171F871890c86308147032BB246508">adding liquidity on SushiSwap</a>.</p>\n`,
   ingredients: [
     {
       unit: `pcs`,
-      amount: 10,
-      product: `tomato`,
-    },
-    {
-      unit: `ml`,
-      amount: 2000,
-      product: `water`,
-    },
-    {
-      unit: `pinch`,
       amount: 1,
-      product: `salt`,
+      product: `rCHILI-MATIC SLP`,
     },
     {
-      unit: `pinch`,
-      amount: 0,
-      product: `pepper`,
-    },
-    {
-      unit: `ml`,
-      amount: 100,
-      product: `cream`,
+      unit: `clove`,
+      amount: 1,
+      product: `garlic`,
     },
   ],
 }

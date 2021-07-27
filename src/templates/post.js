@@ -14,7 +14,7 @@ const Post = ({ pageContext }) => {
     ([, item]) => item.slug === pageContext.slug
   )[1]
 
-  // Step 2. Load this farm's data from Context (DataProvider)
+  // Step 2. Load this specific farm's data from Context (DataProvider)
   const [context] = useContext(Context)
   const { allFarmsData } = context
   const [farmData, setFarmData] = useState({})
@@ -30,7 +30,7 @@ const Post = ({ pageContext }) => {
   React.useEffect(() => {
     allFarmsData && parseFarmData()
   }, [allFarmsData])
-  console.log(post)
+
   return (
     <>
       <Helmet>
@@ -51,6 +51,40 @@ const Post = ({ pageContext }) => {
               <h4>
                 <div>Servings: {post.servings} meals</div>
                 <div>Cooking time: {post.cookingTime} minutes</div>
+                <div>Network: {post.web3.NETWORK}</div>
+                <div>
+                  Farm:{` `}
+                  <a
+                    href={
+                      post.web3.EXPLORER_BASE_URL +
+                      post.web3.STAKING_TOKEN_ADDRESS
+                    }
+                  >
+                    {post.web3.POOL_ADDRESS}
+                  </a>
+                </div>
+                <div>
+                  Reward token:{` `}
+                  <a
+                    href={
+                      post.web3.EXPLORER_BASE_URL +
+                      post.web3.REWARD_TOKEN_ADDRESS
+                    }
+                  >
+                    {post.web3.REWARD_TOKEN_ADDRESS}
+                  </a>
+                </div>
+                <div>
+                  Staking token:{` `}
+                  <a
+                    href={
+                      post.web3.EXPLORER_BASE_URL +
+                      post.web3.STAKING_TOKEN_ADDRESS
+                    }
+                  >
+                    {post.web3.STAKING_TOKEN_ADDRESS}
+                  </a>
+                </div>
               </h4>
 
               <hr />
@@ -94,12 +128,8 @@ const Post = ({ pageContext }) => {
                       </div>
                       <div className="recipe-step-data">
                         <p>{step.step}</p>
-
-                        {step.image && step.image[0] ? (
-                          <img
-                            src={`https://api.flotiq.com/image/1280x0/${step.image[0].id}.${step.image[0].extension}`}
-                            alt={post.name}
-                          />
+                        {step.imageSrc ? (
+                          <img src={step.imageSrc} alt={step.imageAlt} />
                         ) : (
                           ``
                         )}
