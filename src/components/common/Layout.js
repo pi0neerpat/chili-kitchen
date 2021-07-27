@@ -45,11 +45,9 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
               </Link>
             </div>
             <div className="site-mast-right">
-              {/*
               <a href="/about" className="site-banner-title">
                 About
               </a>
-              */}
             </div>
           </div>
           <header className="site-head">
