@@ -6,6 +6,7 @@ import Img from "gatsby-image"
 import { Layout } from "../components/common"
 import { Context } from "@providers/Context"
 import fetchRecipes from "@utils/fetchRecipes"
+import { truncateAddress } from "@utils/helpers"
 
 const Post = ({ pageContext }) => {
   // Step 1. Load this recipe's details
@@ -53,14 +54,14 @@ const Post = ({ pageContext }) => {
                 <div>Cooking time: {post.cookingTime} minutes</div>
                 <div>Network: {post.web3.NETWORK}</div>
                 <div>
-                  Farm:{` `}
+                  Farm contract:{` `}
                   <a
                     href={
                       post.web3.EXPLORER_BASE_URL +
                       post.web3.STAKING_TOKEN_ADDRESS
                     }
                   >
-                    {post.web3.POOL_ADDRESS}
+                    {truncateAddress(post.web3.POOL_ADDRESS)}
                   </a>
                 </div>
                 <div>
@@ -71,7 +72,7 @@ const Post = ({ pageContext }) => {
                       post.web3.REWARD_TOKEN_ADDRESS
                     }
                   >
-                    {post.web3.REWARD_TOKEN_ADDRESS}
+                    {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
                   </a>
                 </div>
                 <div>
@@ -82,7 +83,7 @@ const Post = ({ pageContext }) => {
                       post.web3.STAKING_TOKEN_ADDRESS
                     }
                   >
-                    {post.web3.STAKING_TOKEN_ADDRESS}
+                    {truncateAddress(post.web3.STAKING_TOKEN_ADDRESS)}
                   </a>
                 </div>
               </h4>

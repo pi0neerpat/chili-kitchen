@@ -4,7 +4,7 @@ module.exports = {
   scoville: 3,
   oneClickDappSrc: `https://beta.oneclickdapp.com/embed/rchili-matic-farm`,
   web3: {
-    EXPLORER_BASE_URL: `https://polygonscan.com/`,
+    EXPLORER_BASE_URL: `https://polygonscan.com/address/`,
     NETWORK: `matic`,
     POOL_ADDRESS: `0x11D168E257B4e1A89EE7Db16d0597176ACe3679c`,
     STAKING_TOKEN_ADDRESS: `0x34209A5F702a81B62197dbFc36A48c3FE04aF8d7`,

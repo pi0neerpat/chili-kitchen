@@ -4,7 +4,7 @@ module.exports = {
   scoville: 4,
   oneClickDappSrc: `https://beta.oneclickdapp.com/embed/chili-farm`,
   web3: {
-    EXPLORER_BASE_URL: `https://polygonscan.com/`,
+    EXPLORER_BASE_URL: `https://polygonscan.com/address/`,
     NETWORK: `matic`,
     POOL_ADDRESS: `0xFf6fc5951977D8Bf08820664158c9CC9EBA8fA20`,
     STAKING_TOKEN_ADDRESS: `0x8bab80afddb52f5b581c18324d985013da49569a`,
