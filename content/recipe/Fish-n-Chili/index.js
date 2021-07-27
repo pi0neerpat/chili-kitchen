@@ -1,6 +1,6 @@
 module.exports = {
   id: `recipe-2`,
-  name: `rCHILI-MATIC SLP Farming`,
+  name: `Fish-n-Chili - rCHILI-MATIC SLP Farm`,
   scoville: 3,
   oneClickDappSrc: `https://beta.oneclickdapp.com/embed/rchili-matic-farm`,
   web3: {

@@ -1,6 +1,6 @@
 module.exports = {
   id: `rChili`,
-  name: `rCHILI Farming`,
+  name: `Roasted Chili - CHILI Farm`,
   scoville: 4,
   oneClickDappSrc: `https://beta.oneclickdapp.com/embed/chili-farm`,
   web3: {

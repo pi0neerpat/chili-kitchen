@@ -8,9 +8,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   // ###### RECIPES ########
   if (node.internal.type === `File`) {
-    const value = createFilePath({ node, getNode })
-      .replace(/\/$/, ``)
-      .replace(/\s/, `-`)
+    const value = createFilePath({ node, getNode }).replace(/\/$/, ``)
+    // .replace(/\s/, `-`)
     const slug = value.toLowerCase()
     const name = value.replace(/\/recipe\//, ``).replace(/-/, ` `)
     createNodeField({
@@ -25,6 +24,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
     if (/^recipe\/.+\/index.js/.test(node.relativePath)) {
       const content = require(`./content/${node.relativeDirectory}`)
+      createNodeField({
+        node,
+        name: `name`,
+        value: content.name,
+      })
       createNodeField({
         name: `content`,
         node,
