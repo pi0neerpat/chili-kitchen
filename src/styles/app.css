@@ -1196,15 +1196,20 @@ h6 {
 
 .iframe-wrapper {
   /* background: black center center no-repeat; */
-  height: 500px;
+  height: 470px;
   display: flex;
+  vertical-align: middle;
   align-items: center;
+  margin-top: 40px;
+  position: relative;
   justify-content: center;
 }
 
 .iframe {
-  flex-grow: 2;
-  width: auto;
-  height: 500px;
+  top: 0;
+  z-index: 999;
+  position: absolute;
+  height: 850px;
+  width: 100%;
   min-width: 400px;
 }
