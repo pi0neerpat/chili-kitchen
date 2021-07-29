@@ -5,6 +5,8 @@ import { Link, StaticQuery, graphql } from "gatsby"
 import Logo from "../../images/logo.svg"
 import SeoBanner from "../../images/seo-banner.png"
 import ImageMeta from "./meta/ImageMeta"
+import config from "../../utils/siteConfig"
+
 // Styles
 import "../../styles/app.css"
 
@@ -29,6 +31,11 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
       <Helmet>
         <html lang="en" />
         <body className={bodyClass} />
+        <meta name="description" content={config.siteDescriptionMeta} />
+        <meta property="og:title" content={config.siteTitleMeta} />
+        <meta property="og:url" content={config.siteUrl} />
+        <meta property="og:description" content={config.siteDescriptionMeta} />
+        <meta data-react-helmet="true" property="og:type" content="website" />
       </Helmet>
       <ImageMeta image={SeoBanner} />
       <div className="viewport">
