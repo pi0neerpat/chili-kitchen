@@ -1194,22 +1194,23 @@ h6 {
   cursor: pointer;
 }
 
+.iframe-spacer {
+  height: 460px;
+}
+
 .iframe-wrapper {
-  /* background: black center center no-repeat; */
-  height: 560px;
   display: flex;
-  vertical-align: middle;
-  align-items: center;
-  margin-top: 40px;
-  position: relative;
   justify-content: center;
+  margin-top: 40px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .iframe {
-  top: 0;
   z-index: 999;
-  position: absolute;
   height: 850px;
-  width: 100%;
+  width: 80%;
   min-width: 400px;
 }

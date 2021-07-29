@@ -49,6 +49,7 @@ const Post = ({ pageContext }) => {
                   className="iframe"
                 />
               </div>
+              <div className="iframe-spacer" />
               <h4>
                 <div>Servings: {post.servings} meals</div>
                 <div>Cooking time: {post.cookingTime} minutes</div>
