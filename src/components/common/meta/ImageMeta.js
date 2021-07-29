@@ -11,7 +11,9 @@ const ImageMeta = ({ image }) => {
   return (
     <Helmet>
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={image} />
+      <meta data-react-helmet="true" name="twitter:image" content={image} />
+      <meta property="og:image:width" content={config.shareImageWidth} />
+      <meta property="og:image:height" content={config.shareImageHeight} />
       <meta name="twitter:title" content={config.siteTitleMeta} />
       <meta property="og:image" content={image} />
       <meta
