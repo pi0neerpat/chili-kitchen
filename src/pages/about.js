@@ -4,7 +4,7 @@ import { Layout } from "../components/common"
 const About = () => (
   <Layout>
     <div className="container">
-      <article className="content" style={{ textAlign: `center` }}>
+      <article className="content" style={{ textAlign: `left` }}>
         <h1 className="content-title">About Chili 👋🏼</h1>
         <section className="content-body">
           <p>

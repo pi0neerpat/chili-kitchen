@@ -27,21 +27,19 @@ const Post = ({ pageContext }) => {
       ...data,
     })
   }
-
   React.useEffect(() => {
     allFarmsData && parseFarmData()
   }, [allFarmsData])
 
   return (
-    <>
+    <div className="content">
       <Helmet>
         <style type="text/css">{`${post.codeinjection_styles}`}</style>
       </Helmet>
       <Layout>
-        <div className="container">
-          <article className="content">
-            <section className="post-full-content">
-              <h1 className="content-title">{post.name}</h1>
+        <div className="content">
+          <div className="container">
+            <section>
               <div className="iframe-wrapper">
                 <iframe
                   src={post.oneClickDappSrc}
@@ -49,79 +47,70 @@ const Post = ({ pageContext }) => {
                   className="iframe"
                 />
               </div>
-              <h4>
-                <div>Servings: {post.servings} meals</div>
-                <div>Cooking time: {post.cookingTime} minutes</div>
-                <div>Network: {post.web3.NETWORK}</div>
-                <div>
-                  Farm contract:{` `}
-                  <a
-                    href={
-                      post.web3.EXPLORER_BASE_URL +
-                      post.web3.STAKING_TOKEN_ADDRESS
-                    }
-                  >
-                    {truncateAddress(post.web3.POOL_ADDRESS)}
-                  </a>
-                </div>
-                <div>
-                  Reward token:{` `}
-                  <a
-                    href={
-                      post.web3.EXPLORER_BASE_URL +
-                      post.web3.REWARD_TOKEN_ADDRESS
-                    }
-                  >
-                    {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
-                  </a>
-                </div>
-                <div>
-                  Staking token:{` `}
-                  <a
-                    href={
-                      post.web3.EXPLORER_BASE_URL +
-                      post.web3.STAKING_TOKEN_ADDRESS
-                    }
-                  >
-                    {truncateAddress(post.web3.STAKING_TOKEN_ADDRESS)}
-                  </a>
-                </div>
-              </h4>
-
-              <hr />
-
+              <div className="post-title-container">
+                <h1 className="title is-1" style={{ marginBottom: 0 }}>{post.name}</h1>
+                <Img
+                  className="post-image"
+                  fluid={post.image.node.childImageSharp.fluid}
+                />
+              </div>
               <section
                 className="content-body"
                 dangerouslySetInnerHTML={{
                   __html: post.description,
                 }}
               />
-              <h2 className="content-title">Ingredients</h2>
 
-              {post.ingredients !== null ? (
-                <section className="content-body">
-                  {post.ingredients.map((ingredient, index) => (
-                    <label key="index" className="recipe-ingredients">
-                      <span>
-                        <strong>
-                          {` `}
-                          {ingredient.product}
-                          {` `}
-                        </strong>
-                        ({`${ingredient.amount} ${ingredient.unit}`})
-                      </span>
-                      <input type="checkbox" />
-                    </label>
-                  ))}
-                  <p />
-                </section>
-              ) : (
-                <section className="content-body" />
-              )}
+              <div className="columns is-gapless" style={{ marginTop: 20 }}>
+                <div className="column">
+                  <h3 className="title is-3">Details</h3>
+                  <div><span className="grey-text">Servings:</span> {post.servings} meals</div>
+                  <div><span className="grey-text">Network:</span> {post.web3.NETWORK}</div>
+                  <div>
+                    <span className="grey-text">Farm contract:{` `}</span>
+                    <a
+                      href={
+                        post.web3.EXPLORER_BASE_URL +
+                        post.web3.STAKING_TOKEN_ADDRESS
+                      }
+                    >
+                      {truncateAddress(post.web3.POOL_ADDRESS)}
+                    </a>
+                  </div>
+                  <div>
+                    <span className="grey-text">Reward token:{` `}</span>
+                    <a
+                      href={
+                        post.web3.EXPLORER_BASE_URL +
+                        post.web3.REWARD_TOKEN_ADDRESS
+                      }
+                    >
+                      {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
+                    </a>
+                  </div>
+                  <div>
+                    <span className="grey-text">Staking token:{` `}</span>
+                    <a
+                      href={
+                        post.web3.EXPLORER_BASE_URL +
+                        post.web3.STAKING_TOKEN_ADDRESS
+                      }
+                    >
+                      {truncateAddress(post.web3.STAKING_TOKEN_ADDRESS)}
+                    </a>
+                  </div>
+                </div>
+                <div className="column">
+                  <h3 className="title is-3">Ingeredients</h3>
+                  {post.ingredients.map((ingredient) => <><b>{ingredient.product}</b> ({ingredient.amount} {ingredient.unit}) <hr /></>)}
+                </div>
+              </div>
+
+              <hr />
 
               <h2 className="content-title">Steps</h2>
               {post.steps !== null ? (
-                <section className="content-body">
+                <section className="recipe-steps-container">
                   {post.steps.map((step, index) => (
                     <div className="recipe-step" key={index}>
                       <div className="recipe-step-index">
@@ -142,10 +131,10 @@ const Post = ({ pageContext }) => {
                 <section className="content-body" />
               )}
             </section>
-          </article>
+          </div>
         </div>
       </Layout>
-    </>
+    </div>
   )
 }
 
