@@ -8,7 +8,7 @@ import ImageMeta from "./meta/ImageMeta"
 import config from "../../utils/siteConfig"
 
 // Styles
-import "../../styles/app.css"
+import "../../styles/app.scss"
 
 /**
  * Main layout component
@@ -27,7 +27,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
   }
 
   return (
-    <>
+    <div className="content">
       <Helmet>
         <html lang="en" />
         <body className={bodyClass} />
@@ -41,22 +41,39 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
       <div className="viewport">
         <div className="viewport-top">
           {/* The main header section on top of the screen */}
-          <div className="site-mast">
-            <div className="site-mast-left">
-              <Link to="/">
+
+          <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <Link to="/" className='navbar-brand'>
                 <img
                   className="site-logo"
                   src={Logo}
                   alt="Chili Kitchen Logo"
                 />
               </Link>
-            </div>
-            <div className="site-mast-right">
-              <a href="/about" className="site-banner-title">
-                About
+
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
               </a>
             </div>
-          </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a href="/about" className="button is-warning">
+                      About
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+
+
           <header className="site-head">
             <div className="container">
               {isHome ? (
@@ -71,21 +88,19 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
           <main className="site-main">{children}</main>
         </div>
 
-        <div className="viewport-bottom">
-          {/* The footer at the very bottom of the screen */}
-          <footer className="site-foot">
-            <div className="site-foot-nav container">
-              <div className="site-foot-nav-left">
-                <Link to="/">{site.title}</Link>
-              </div>
-              <div className="site-foot-nav-right">
-                <a href="https://metacartel.org">MetaCartel.org</a>
-              </div>
+        {/* The footer at the very bottom of the screen */}
+        <footer className="footer">
+          <div>
+            <div>
+              <Link to="/">{site.title}</Link>
             </div>
-          </footer>
-        </div>
+            <div>
+              <a href="https://metacartel.org">MetaCartel.org</a>
+            </div>
+          </div>
+        </footer>
       </div>
-    </>
+    </div>
   )
 }
 

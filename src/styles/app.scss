@@ -1,0 +1,102 @@
+@import "node_modules/bulmaswatch/lumen/bulmaswatch";
+
+.post-title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-end;
+
+  .post-image {
+    position: absolute;
+    top: 20px;
+    width: 100px;
+  }
+}
+
+.post-feed {
+  margin: 100px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .post-card > .card {
+    height: 500px;
+    width: 300px;
+    padding: 20px;
+  }
+}
+
+.content-body {
+  font-style: italic;
+}
+
+.iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.grey-text {
+  color: #999;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1000px !important;
+}
+
+.site-head {
+  /* padding-top: 20px; */
+  color: #fff;
+  background: var(--color-base);
+  background-position: center;
+  background-size: cover;
+  background-image: url("../images/banner.png");
+  min-height: 200px;
+  margin-bottom: 50px;
+}
+
+.recipe-steps-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-step {
+  width: 50%;
+  display: flex;
+  padding: 10px;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.recipe-step-index {
+  background-color: orange;
+  width: 50px !important;
+  min-width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.footer {
+  background-color: #252525;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  div {
+    width: 100px;
+  }
+}
