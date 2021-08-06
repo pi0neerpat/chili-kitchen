@@ -43,6 +43,18 @@ module.exports = {
                 failOnError: false,
             },
         },
+        {
+          resolve: `gatsby-plugin-manifest`,
+          options: {
+            name: `Chili Kitchen`,
+            short_name: `Chili Kitchen`,
+            start_url: `/`,
+            background_color: `#5b7a81`,
+            theme_color: `#5b7a81`,
+            display: `minimal-ui`,
+            icon: `src/images/red-scoville.png`, // This path is relative to the root of the site.
+          },
+        },
         `gatsby-transformer-sharp`,
         /**
          *  Utility Plugins
