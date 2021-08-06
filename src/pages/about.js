@@ -4,7 +4,6 @@ import { Layout } from "../components/common"
 const About = () => (
   <Layout>
     <div className="container about-page">
-      <div className="nes-container is-rounded">
         <div class="nes-container with-title">
           <p class="title">About Chili 👋🏼</p>
           <section className="content-body">
@@ -84,7 +83,6 @@ const About = () => (
             <p>Welcome to the Chili Community.</p>
           </section>
         </div>
-      </div>
     </div>
   </Layout>
 )
