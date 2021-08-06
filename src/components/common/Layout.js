@@ -26,6 +26,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
   return (
     <div className="content">
+      {/* <Particles /> */}
       <Helmet>
         <html lang="en" />
         <body className={bodyClass} />
@@ -34,36 +35,37 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
       <div className="viewport">
         <div className="viewport-top">
           {/* The main header section on top of the screen */}
+          <div className="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+              <div class="navbar-brand">
+                <Link to="/" className='navbar-brand'>
+                  <img
+                    className="site-logo"
+                    src={Logo}
+                    alt="Chili Kitchen Logo"
+                  />
+                </Link>
 
-          <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <Link to="/" className='navbar-brand'>
-                <img
-                  className="site-logo"
-                  src={Logo}
-                  alt="Chili Kitchen Logo"
-                />
-              </Link>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                </a>
+              </div>
 
-              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a href="/about" className="button is-warning">
-                      About
-                    </a>
+              <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                  <div class="navbar-item">
+                    <div class="buttons">
+                      <a href="/about" className="nes-btn is-error">
+                        About
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </nav>
+            </nav>
+          </div>
 
 
 
@@ -83,14 +85,8 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
 
         {/* The footer at the very bottom of the screen */}
         <footer className="footer">
-          <div>
-            <div>
-              <Link to="/">{site.title}</Link>
-            </div>
-            <div>
-              <a href="https://metacartel.org">MetaCartel.org</a>
-            </div>
-          </div>
+          <Link to="/">{site.title}</Link>
+          <a href="https://metacartel.org">MetaCartel.org</a>
         </footer>
       </div>
     </div>

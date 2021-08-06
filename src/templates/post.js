@@ -64,41 +64,50 @@ const Post = ({ pageContext }) => {
               <div className="columns is-gapless" style={{ marginTop: 20 }}>
                 <div className="column">
                   <h3 className="title is-3">Details</h3>
-                  <div><span className="grey-text">Servings:</span> {post.servings} meals</div>
-                  <div><span className="grey-text">Network:</span> {post.web3.NETWORK}</div>
-                  <div>
-                    <span className="grey-text">Farm contract:{` `}</span>
-                    <a
-                      href={
-                        post.web3.EXPLORER_BASE_URL +
-                        post.web3.STAKING_TOKEN_ADDRESS
-                      }
-                    >
-                      {truncateAddress(post.web3.POOL_ADDRESS)}
-                    </a>
-                  </div>
-                  <div>
-                    <span className="grey-text">Reward token:{` `}</span>
-                    <a
-                      href={
-                        post.web3.EXPLORER_BASE_URL +
-                        post.web3.REWARD_TOKEN_ADDRESS
-                      }
-                    >
-                      {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
-                    </a>
-                  </div>
-                  <div>
-                    <span className="grey-text">Staking token:{` `}</span>
-                    <a
-                      href={
-                        post.web3.EXPLORER_BASE_URL +
-                        post.web3.STAKING_TOKEN_ADDRESS
-                      }
-                    >
-                      {truncateAddress(post.web3.STAKING_TOKEN_ADDRESS)}
-                    </a>
-                  </div>
+                  <span href="#" class="nes-badge is-splited">
+                    <span class="is-primary">Servings</span>
+                    <span class="is-dark">{post.servings}</span>
+                  </span> <br />
+                  <span href="#" class="nes-badge is-splited">
+                    <span class="is-primary">Network</span>
+                    <span class="is-dark">{post.web3.NETWORK}</span>
+                  </span> <br />
+                  <span href="#" class="nes-badge is-splited">
+                    <span class="is-primary">Farm Contract</span>
+                    <span class="is-dark">
+                      <a
+                        href={
+                          post.web3.EXPLORER_BASE_URL +
+                          post.web3.STAKING_TOKEN_ADDRESS
+                        }
+                      >
+                        {truncateAddress(post.web3.POOL_ADDRESS)}
+                      </a></span>
+                  </span> <br />
+                  <span href="#" class="nes-badge is-splited">
+                    <span class="is-primary">Reward Token</span>
+                    <span class="is-dark">
+                      <a
+                        href={
+                          post.web3.EXPLORER_BASE_URL +
+                          post.web3.STAKING_TOKEN_ADDRESS
+                        }
+                      >
+                        {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
+                      </a></span>
+                  </span> <br />
+                  <span href="#" class="nes-badge is-splited">
+                    <span class="is-primary">Staking Token</span>
+                    <span class="is-dark">
+                      <a
+                        href={
+                          post.web3.EXPLORER_BASE_URL +
+                          post.web3.STAKING_TOKEN_ADDRESS
+                        }
+                      >
+                        {truncateAddress(post.web3.STAKING_TOKEN_ADDRESS)}
+                      </a></span>
+                  </span> <br />
                 </div>
                 <div className="column">
                   <h3 className="title is-3">Ingeredients</h3>
