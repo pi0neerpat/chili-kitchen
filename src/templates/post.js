@@ -47,98 +47,100 @@ const Post = ({ pageContext }) => {
                   className="iframe"
                 />
               </div>
-              <div className="post-title-container">
-                <h1 className="title is-1" style={{ marginBottom: 0 }}>{post.name}</h1>
-                <Img
-                  className="post-image"
-                  fluid={post.image.node.childImageSharp.fluid}
+              <div className="nes-container is-rounded">
+                <div className="post-title-container">
+                  <h1 className="title is-1" style={{ marginBottom: 0 }}>{post.name}</h1>
+                  <Img
+                    className="post-image"
+                    fluid={post.image.node.childImageSharp.fluid}
+                  />
+                </div>
+                <section
+                  className="content-body"
+                  dangerouslySetInnerHTML={{
+                    __html: post.description,
+                  }}
                 />
-              </div>
-              <section
-                className="content-body"
-                dangerouslySetInnerHTML={{
-                  __html: post.description,
-                }}
-              />
 
-              <div className="columns is-gapless" style={{ marginTop: 20 }}>
-                <div className="column">
-                  <h3 className="title is-3">Details</h3>
-                  <span href="#" class="nes-badge is-splited">
-                    <span class="is-primary">Servings</span>
-                    <span class="is-dark">{post.servings}</span>
-                  </span> <br />
-                  <span href="#" class="nes-badge is-splited">
-                    <span class="is-primary">Network</span>
-                    <span class="is-dark">{post.web3.NETWORK}</span>
-                  </span> <br />
-                  <span href="#" class="nes-badge is-splited">
-                    <span class="is-primary">Farm Contract</span>
-                    <span class="is-dark">
-                      <a
-                        href={
-                          post.web3.EXPLORER_BASE_URL +
-                          post.web3.STAKING_TOKEN_ADDRESS
-                        }
-                      >
-                        {truncateAddress(post.web3.POOL_ADDRESS)}
-                      </a></span>
-                  </span> <br />
-                  <span href="#" class="nes-badge is-splited">
-                    <span class="is-primary">Reward Token</span>
-                    <span class="is-dark">
-                      <a
-                        href={
-                          post.web3.EXPLORER_BASE_URL +
-                          post.web3.STAKING_TOKEN_ADDRESS
-                        }
-                      >
-                        {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
-                      </a></span>
-                  </span> <br />
-                  <span href="#" class="nes-badge is-splited">
-                    <span class="is-primary">Staking Token</span>
-                    <span class="is-dark">
-                      <a
-                        href={
-                          post.web3.EXPLORER_BASE_URL +
-                          post.web3.STAKING_TOKEN_ADDRESS
-                        }
-                      >
-                        {truncateAddress(post.web3.STAKING_TOKEN_ADDRESS)}
-                      </a></span>
-                  </span> <br />
+                <div className="columns is-gapless" style={{ marginTop: 20 }}>
+                  <div className="column">
+                    <h3 className="title is-3">Details</h3>
+                    <span href="#" class="nes-badge is-splited">
+                      <span class="is-primary">Servings</span>
+                      <span class="is-dark">{post.servings}</span>
+                    </span> <br />
+                    <span href="#" class="nes-badge is-splited">
+                      <span class="is-primary">Network</span>
+                      <span class="is-dark">{post.web3.NETWORK}</span>
+                    </span> <br />
+                    <span href="#" class="nes-badge is-splited">
+                      <span class="is-primary">Farm Contract</span>
+                      <span class="is-dark">
+                        <a
+                          href={
+                            post.web3.EXPLORER_BASE_URL +
+                            post.web3.STAKING_TOKEN_ADDRESS
+                          }
+                        >
+                          {truncateAddress(post.web3.POOL_ADDRESS)}
+                        </a></span>
+                    </span> <br />
+                    <span href="#" class="nes-badge is-splited">
+                      <span class="is-primary">Reward Token</span>
+                      <span class="is-dark">
+                        <a
+                          href={
+                            post.web3.EXPLORER_BASE_URL +
+                            post.web3.STAKING_TOKEN_ADDRESS
+                          }
+                        >
+                          {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
+                        </a></span>
+                    </span> <br />
+                    <span href="#" class="nes-badge is-splited">
+                      <span class="is-primary">Staking Token</span>
+                      <span class="is-dark">
+                        <a
+                          href={
+                            post.web3.EXPLORER_BASE_URL +
+                            post.web3.STAKING_TOKEN_ADDRESS
+                          }
+                        >
+                          {truncateAddress(post.web3.STAKING_TOKEN_ADDRESS)}
+                        </a></span>
+                    </span> <br />
+                  </div>
+                  <div className="column">
+                    <h3 className="title is-3">Ingeredients</h3>
+                    {post.ingredients.map((ingredient) => <><b>{ingredient.product}</b> ({ingredient.amount} {ingredient.unit}) <hr /></>)}
+                  </div>
                 </div>
-                <div className="column">
-                  <h3 className="title is-3">Ingeredients</h3>
-                  {post.ingredients.map((ingredient) => <><b>{ingredient.product}</b> ({ingredient.amount} {ingredient.unit}) <hr /></>)}
-                </div>
+
+                <hr />
+
+                <h2 className="content-title">Steps</h2>
+                {post.steps !== null ? (
+                  <section className="recipe-steps-container">
+                    {post.steps.map((step, index) => (
+                      <div className="recipe-step" key={index}>
+                        <div className="recipe-step-index">
+                          <div>{index + 1}</div>
+                        </div>
+                        <div className="recipe-step-data">
+                          <p>{step.step}</p>
+                          {step.imageSrc ? (
+                            <img src={step.imageSrc} alt={step.imageAlt} />
+                          ) : (
+                            ``
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </section>
+                ) : (
+                  <section className="content-body" />
+                )}
               </div>
-
-              <hr />
-
-              <h2 className="content-title">Steps</h2>
-              {post.steps !== null ? (
-                <section className="recipe-steps-container">
-                  {post.steps.map((step, index) => (
-                    <div className="recipe-step" key={index}>
-                      <div className="recipe-step-index">
-                        <div>{index + 1}</div>
-                      </div>
-                      <div className="recipe-step-data">
-                        <p>{step.step}</p>
-                        {step.imageSrc ? (
-                          <img src={step.imageSrc} alt={step.imageAlt} />
-                        ) : (
-                          ``
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </section>
-              ) : (
-                <section className="content-body" />
-              )}
             </section>
           </div>
         </div>
