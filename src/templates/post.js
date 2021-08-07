@@ -111,7 +111,7 @@ const Post = ({ pageContext }) => {
                     </span> <br />
                   </div>
                   <div className="column">
-                    <h3 className="title is-3">Ingeredients</h3>
+                    <h3 className="title is-3">Ingredients</h3>
                     {post.ingredients.map((ingredient) => <><b>{ingredient.product}</b> ({ingredient.amount} {ingredient.unit}) <hr /></>)}
                   </div>
                 </div>
