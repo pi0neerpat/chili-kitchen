@@ -9,22 +9,27 @@ import ScovilleMeter from "../ScovilleMeter"
 
 const PostCard = ({ post }) => {
   const url = `${post.slug}/`
+  console.log(post)
 
   return (
-    <Link to={url} className="post-card">
-      <header className="post-card-header">
-        {post.image ? (
-          <Img
-            className="post-card-image"
-            fluid={post.image.node.childImageSharp.fluid}
-          />
-        ) : (
-          <div className="post-card-image" />
-        )}
-        <h2 className="post-card-title">{post.name}</h2>
-      </header>
-      <section className="post-card-tags">
-        {/*
+    <div className="nes-container is-rounded">
+      <Link to={url} className="post-card">
+        <div className="nes-card">
+          <header className="post-card-header">
+            <h2 className="post-card-title">{post.name}</h2>
+            <h5 className="post-card-title">{post.farmName}</h5>
+            {post.image ? (
+              <Img
+                style={{ maxWidth: 500 }}
+                className="image"
+                fluid={post.image.node.childImageSharp.fluid}
+              />
+            ) : (
+              <div className="post-card-image" />
+            )}
+          </header>
+          <section className="post-card-tags">
+            {/*
         // TODO: Number of farmers    
         <div>
           <img className="post-card-tag-icon" alt="Servings" src={Servings} />
@@ -32,13 +37,15 @@ const PostCard = ({ post }) => {
           {post.servings}
         </div>*/}
 
-        <ScovilleMeter value={post.scoville} />
-      </section>
-      <footer className="post-card-footer">
-        <div className="post-card-footer-left"></div>
-        <div className="post-card-footer-right"></div>
-      </footer>
-    </Link>
+            <ScovilleMeter value={post.scoville} />
+          </section>
+          <footer className="post-card-footer">
+            <div className="post-card-footer-left"></div>
+            <div className="post-card-footer-right"></div>
+          </footer>
+        </div>
+      </Link>
+    </div>
   )
 }
 

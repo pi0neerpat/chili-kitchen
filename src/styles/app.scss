@@ -1,0 +1,180 @@
+@import "node_modules/bulmaswatch/default/bulmaswatch";
+@import "./nes.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+html, body {
+  font-family: 'Press Start 2P', cursive;
+  color: #aaa;
+  background: url(../images/spiralfull.svg) no-repeat center center fixed;
+  background-size: cover;
+  background-color: white;
+}
+
+.nes-balloon {
+  color: #252525;
+}
+
+.post-title-container {
+  display: flex;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-end;
+
+  .post-image {
+    position: absolute;
+    top: 20px;
+    width: 100px;
+  }
+}
+
+.post-feed {
+  margin: 50px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .nes-container {
+    background-color: #efefef;
+
+    &:hover {
+      background-color: #eee;
+      box-shadow: 7px 7px 7px #999;
+    }
+  }
+
+  .post-card > .nes-card {
+    width: 300px;
+    padding: 20px;
+    position: relative;
+
+    .post-card-title {
+      font-size: 20px;
+    }
+  }
+}
+
+.content-body {
+  font-style: italic;
+}
+
+.about-page {
+  p {
+    color: #aaa;
+    padding-bottom: 50px;
+  }
+}
+
+.iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.grey-text {
+  color: #999;
+  font-weight: bold;
+}
+
+.container {
+  width: 90vw !important;
+  margin: 50px auto 0 auto;
+  padding: 0;
+}
+
+.nes-container {
+  background-color: #fff;
+}
+
+.navbar {
+  border: none;
+  max-width: 90vw;
+  margin: 0 auto;
+  background: none;
+
+  .site-logo {
+    background-color: #F8FAFC;
+  }
+}
+
+// .site-head {
+//   /* padding-top: 20px; */
+//   color: #fff;
+//   background: var(--color-base);
+//   background-position: center;
+//   background-size: cover;
+//   background-image: url("../images/banner.png");
+//   min-height: 500px;
+//   margin-bottom: 50px;
+// }
+
+.recipe-steps-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe-step {
+  width: 50%;
+  display: flex;
+  padding: 10px;
+  align-content: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.nes-container {
+  p.title {
+    color: #252525;
+    font-size: 30px !important;
+  }
+}
+
+.recipe-step-index {
+  background-color: orange;
+  color: #252525;
+  width: 50px !important;
+  min-width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.footer {
+  background: #ffffff00;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  div {
+    width: 100px;
+  }
+}
+
+.chili-character:hover {
+  animation-name: bounce; 
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  opacity: 0.9;
+}
+
+@keyframes bounce {
+  from { 
+    margin-top: 0px;
+  }
+  to   { 
+    margin-top: -5px;
+  }
+}
