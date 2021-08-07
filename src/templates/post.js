@@ -50,10 +50,10 @@ const Post = ({ pageContext }) => {
               <div className="nes-container is-rounded">
                 <div className="post-title-container">
                   <h1 className="title is-1" style={{ marginBottom: 0 }}>{post.name}</h1>
-                  <Img
+                  {/* <Img
                     className="post-image"
                     fluid={post.image.node.childImageSharp.fluid}
-                  />
+                  /> */}
                 </div>
                 <section
                   className="content-body"
