@@ -1,6 +1,8 @@
 import React, { useContext } from "react"
 import { graphql } from "gatsby"
 
+import Chili from '../images/chili.png';
+
 import { Layout, PostCard, Pagination } from "../components/common"
 import { Context } from "@providers/Context"
 
@@ -32,13 +34,31 @@ const Index = ({ pageContext }) => {
     <>
       <Layout isHome={true}>
         <div className="container">
-          <h1>Recipes</h1>
-          <section className="post-feed">
-            {recipes.map((recipe) => (
-              <PostCard key={recipe.id} post={recipe} />
-            ))}
-          </section>
-          <Pagination pageContext={pageContext} />
+          <div className="columns">
+
+
+            <div className="column is-one-third">
+              <div class="nes-balloon from-left">
+                <p>Welcome to the Chili Kitchen</p>
+              </div>
+              <img className="chili-character" src={Chili} />
+            </div>
+
+            <div className="column">
+              {/* <div className="nes-container is-rounded"> */}
+              <div class="nes-container with-title is-centered is-rounded">
+                <p class="title">Choose your recipe</p>
+                <section className="post-feed">
+                  {recipes.map((recipe) => (
+                    <PostCard key={recipe.id} post={recipe} />
+                  ))}
+                </section>
+              </div>
+              <Pagination pageContext={pageContext} />
+              {/* </div> */}
+            </div>
+          </div>
+
         </div>
       </Layout>
     </>
