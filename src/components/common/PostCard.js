@@ -9,7 +9,6 @@ import ScovilleMeter from "../ScovilleMeter"
 
 const PostCard = ({ post }) => {
   const url = `${post.slug}/`
-  console.log(post)
 
   return (
     <div className="nes-container is-rounded">

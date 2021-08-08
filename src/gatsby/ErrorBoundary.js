@@ -2,33 +2,32 @@ import React from "react"
 
 // WARNING: using this.state.error in the render causes crash
 export default class ErrorBoundary extends React.Component {
-    constructor(properties) {
-        super(properties)
-        this.state = {
-            hasError: false,
-        }
+  constructor(properties) {
+    super(properties)
+    this.state = {
+      hasError: false,
     }
+  }
 
-    static getDerivedStateFromError(error) {
-        // TODO: Remove eslint-disable
-        /* eslint-disable no-console */
-        // TODO: Send error to reporting service
-        console.log(error)
-        return { hasError: true }
-    }
+  static getDerivedStateFromError(error) {
+    // TODO: Remove eslint-disable
+    /* eslint-disable no-console */
+    // TODO: Send error to reporting service
+    return { hasError: true }
+  }
 
-    render() {
-        const URL = `https://chilikitchen.com`
-        const ERROR_MESSAGE = `Oops, something went wrong!`
-        const PROMPT = `Reload page`
-        const { children } = this.props
-        const { hasError } = this.state
-        if (hasError) {
-            return (
-                <main>
-                    <style
-                        dangerouslySetInnerHTML={{
-                            __html: `
+  render() {
+    const URL = `https://chilikitchen.com`
+    const ERROR_MESSAGE = `Oops, something went wrong!`
+    const PROMPT = `Reload page`
+    const { children } = this.props
+    const { hasError } = this.state
+    if (hasError) {
+      return (
+        <main>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
               html, body {
                 margin: 0;
               }
@@ -63,17 +62,17 @@ export default class ErrorBoundary extends React.Component {
                 margin: 2rem 0 0;
               }
             `,
-                        }}
-                    />
-                    <section>
-                        <h1>
-                            <span>{ERROR_MESSAGE}</span>
-                        </h1>
-                        <a href={URL}>{PROMPT}</a>
-                    </section>
-                </main>
-            )
-        }
-        return children
+            }}
+          />
+          <section>
+            <h1>
+              <span>{ERROR_MESSAGE}</span>
+            </h1>
+            <a href={URL}>{PROMPT}</a>
+          </section>
+        </main>
+      )
     }
+    return children
+  }
 }

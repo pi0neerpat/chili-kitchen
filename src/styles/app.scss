@@ -1,6 +1,12 @@
-@import "node_modules/bulmaswatch/default/bulmaswatch";
-@import "./nes.scss";
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/helpers/_all.sass";
+@import "bulma/sass/grid/_all.sass";
+@import "bulma/sass/components/navbar.sass";
+@import "bulma/sass/elements/title.sass";
 
+
+@import "./nes.scss";
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 html, body {
@@ -160,14 +166,6 @@ html, body {
   div {
     width: 100px;
   }
-}
-
-.chili-character:hover {
-  animation-name: bounce; 
-  animation-duration: 0.5s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  opacity: 0.9;
 }
 
 @keyframes bounce {
