@@ -50,31 +50,34 @@ const Post = ({ pageContext }) => {
               <div className="nes-container is-rounded">
                 <div className="post-title-container">
                   <h1 className="title is-1" style={{ marginBottom: 0 }}>{post.name}</h1>
-                  {/* <Img
-                    className="post-image"
-                    fluid={post.image.node.childImageSharp.fluid}
-                  /> */}
                 </div>
                 <section
                   className="content-body"
                   dangerouslySetInnerHTML={{
                     __html: post.description,
                   }}
+                  style={{ marginBottom: 70 }}
                 />
 
                 <div className="columns is-gapless" style={{ marginTop: 20 }}>
                   <div className="column">
                     <h3 className="title is-3">Details</h3>
-                    <span href="#" class="nes-badge is-splited">
+                    <span href="#" class="nes-badge">
                       <span class="is-primary">Servings</span>
+                    </span>
+                    <span href="#" class="nes-badge">
                       <span class="is-dark">{post.servings}</span>
                     </span> <br />
-                    <span href="#" class="nes-badge is-splited">
+                    <span href="#" class="nes-badge">
                       <span class="is-primary">Network</span>
+                    </span>
+                    <span href="#" class="nes-badge">
                       <span class="is-dark">{post.web3.NETWORK}</span>
                     </span> <br />
-                    <span href="#" class="nes-badge is-splited">
+                    <span href="#" class="nes-badge">
                       <span class="is-primary">Farm Contract</span>
+                    </span>
+                    <span href="#" class="nes-badge">
                       <span class="is-dark">
                         <a
                           href={
@@ -85,7 +88,7 @@ const Post = ({ pageContext }) => {
                           {truncateAddress(post.web3.POOL_ADDRESS)}
                         </a></span>
                     </span> <br />
-                    <span href="#" class="nes-badge is-splited">
+                    <span href="#" class="nes-badge">
                       <span class="is-primary">Reward Token</span>
                       <span class="is-dark">
                         <a
@@ -96,9 +99,22 @@ const Post = ({ pageContext }) => {
                         >
                           {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
                         </a></span>
+                    </span>
+                    <span href="#" class="nes-badge">
+                      <span class="is-dark">
+                        <a
+                          href={
+                            post.web3.EXPLORER_BASE_URL +
+                            post.web3.STAKING_TOKEN_ADDRESS
+                          }
+                        >
+                          {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
+                        </a></span>
                     </span> <br />
-                    <span href="#" class="nes-badge is-splited">
+                    <span href="#" class="nes-badge">
                       <span class="is-primary">Staking Token</span>
+                    </span>
+                    <span href="#" class="nes-badge">
                       <span class="is-dark">
                         <a
                           href={
@@ -118,7 +134,7 @@ const Post = ({ pageContext }) => {
 
                 <hr />
 
-                <h2 className="content-title">Steps</h2>
+                <h2 className="title is-3">Steps</h2>
                 {post.steps !== null ? (
                   <section className="recipe-steps-container">
                     {post.steps.map((step, index) => (

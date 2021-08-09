@@ -27,7 +27,7 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
   }
 
   return (
-    <div className="content">
+    <div className="">
       {/* <Particles /> */}
       <Helmet>
         <html lang="en" />
@@ -39,8 +39,8 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
         <meta data-react-helmet="true" property="og:type" content="website" />
       </Helmet>
       <ImageMeta image={SeoBanner} />
-      <div className="viewport">
-        <div className="viewport-top">
+      <div className="">
+        <div className="">
           {/* The main header section on top of the screen */}
           <div className="container">
             <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -73,19 +73,6 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
               </div>
             </nav>
           </div>
-
-
-
-          <header className="site-head">
-            <div className="container">
-              {isHome ? (
-                <div>
-                  <div className="button-container"></div>
-                  <div className="site-banner">{/* empty div for space */}</div>
-                </div>
-              ) : null}
-            </div>
-          </header>
 
           <main className="site-main">{children}</main>
         </div>

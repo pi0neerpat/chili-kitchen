@@ -51,9 +51,8 @@ html, body {
   }
 
   .post-card > .nes-card {
-    width: 300px;
-    padding: 20px;
     position: relative;
+    max-width: 300px;
 
     .post-card-title {
       font-size: 20px;
@@ -83,7 +82,7 @@ html, body {
 }
 
 .container {
-  width: 90vw !important;
+  max-width: 1500px !important;
   margin: 50px auto 0 auto;
   padding: 0;
 }
@@ -120,7 +119,7 @@ html, body {
 }
 
 .recipe-step {
-  width: 50%;
+  width: 500px;
   display: flex;
   padding: 10px;
   align-content: stretch;
@@ -156,16 +155,12 @@ html, body {
   height: 100px;
   margin: 0;
   padding: 0;
-  width: 100vw;
 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
-  div {
-    width: 100px;
-  }
+  flex-wrap: wrap;
 }
 
 @keyframes bounce {
