@@ -74,6 +74,7 @@ const Post = ({ pageContext }) => {
                     <span href="#" class="nes-badge">
                       <span class="is-dark">{post.web3.NETWORK}</span>
                     </span> <br />
+
                     <span href="#" class="nes-badge">
                       <span class="is-primary">Farm Contract</span>
                     </span>
@@ -82,35 +83,28 @@ const Post = ({ pageContext }) => {
                         <a
                           href={
                             post.web3.EXPLORER_BASE_URL +
-                            post.web3.STAKING_TOKEN_ADDRESS
+                            post.web3.POOL_ADDRESS
                           }
                         >
                           {truncateAddress(post.web3.POOL_ADDRESS)}
                         </a></span>
                     </span> <br />
+
                     <span href="#" class="nes-badge">
                       <span class="is-primary">Reward Token</span>
-                      <span class="is-dark">
-                        <a
-                          href={
-                            post.web3.EXPLORER_BASE_URL +
-                            post.web3.STAKING_TOKEN_ADDRESS
-                          }
-                        >
-                          {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
-                        </a></span>
                     </span>
                     <span href="#" class="nes-badge">
                       <span class="is-dark">
                         <a
                           href={
                             post.web3.EXPLORER_BASE_URL +
-                            post.web3.STAKING_TOKEN_ADDRESS
+                            post.web3.REWARD_TOKEN_ADDRESS
                           }
                         >
                           {truncateAddress(post.web3.REWARD_TOKEN_ADDRESS)}
                         </a></span>
                     </span> <br />
+
                     <span href="#" class="nes-badge">
                       <span class="is-primary">Staking Token</span>
                     </span>

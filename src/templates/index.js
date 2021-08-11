@@ -31,7 +31,7 @@ const Index = ({ pageContext }) => {
   }, [allFarmsData])
 
   return (
-    <>
+    <div className="content">
       <Layout isHome={true}>
         <div className="container">
           <div className="columns is-gapless">
@@ -59,7 +59,7 @@ const Index = ({ pageContext }) => {
 
         </div>
       </Layout>
-    </>
+    </div>
   )
 }
 

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { Link, StaticQuery, graphql } from "gatsby"
@@ -26,6 +26,10 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
     siteUrl: `https://chilikitchen.com`,
   }
 
+  const [burgerActive, setBurgerActive] = useState(() => false);
+
+  const handleBurgerClick = () => setBurgerActive(a => !a);
+
   return (
     <div className="">
       {/* <Particles /> */}
@@ -43,8 +47,8 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
         <div className="">
           {/* The main header section on top of the screen */}
           <div className="container">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-              <div class="navbar-brand">
+            <nav className="navbar" role="navigation" aria-label="main navigation">
+              <div className="navbar-brand">
                 <Link to="/" className='navbar-brand'>
                   <img
                     className="site-logo"
@@ -53,17 +57,23 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
                   />
                 </Link>
 
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <a
+                  role="button"
+                  onClick={() => handleBurgerClick()}
+                  className={`navbar-burger ${burgerActive ? 'is-active' : ''}`}
+                  aria-label="menu"
+                  aria-expanded="false"
+                  data-target="navbarBasicExample">
                   <span aria-hidden="true"></span>
                   <span aria-hidden="true"></span>
                   <span aria-hidden="true"></span>
                 </a>
               </div>
 
-              <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-end">
-                  <div class="navbar-item">
-                    <div class="buttons">
+              <div id="navbarBasicExample" className={`navbar-menu ${burgerActive ? 'is-active' : ''}`}>
+                <div className="navbar-end">
+                  <div className="navbar-item">
+                    <div className="buttons">
                       <a href="/about" className="nes-btn is-error">
                         About
                       </a>
@@ -82,8 +92,8 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
           <Link to="/">{site.title}</Link>
           <a href="https://metacartel.org">MetaCartel.org</a>
         </footer>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
 
