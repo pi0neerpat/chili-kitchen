@@ -31,10 +31,10 @@ const Index = ({ pageContext }) => {
   }, [allFarmsData])
 
   return (
-    <>
+    <div className="content">
       <Layout isHome={true}>
         <div className="container">
-          <div className="columns">
+          <div className="columns is-gapless">
 
 
             <div className="column is-one-third">
@@ -45,7 +45,6 @@ const Index = ({ pageContext }) => {
             </div>
 
             <div className="column">
-              {/* <div className="nes-container is-rounded"> */}
               <div class="nes-container with-title is-centered is-rounded">
                 <p class="title">Choose your recipe</p>
                 <section className="post-feed">
@@ -55,13 +54,12 @@ const Index = ({ pageContext }) => {
                 </section>
               </div>
               <Pagination pageContext={pageContext} />
-              {/* </div> */}
             </div>
           </div>
 
         </div>
       </Layout>
-    </>
+    </div>
   )
 }
 

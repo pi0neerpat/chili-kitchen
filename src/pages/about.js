@@ -3,17 +3,18 @@ import { Layout } from "../components/common"
 
 const About = () => (
   <Layout>
-    <div className="container about-page">
+    <div className="content about-page">
+      <div className="container">
         <div class="nes-container with-title">
           <p class="title">About Chili 👋🏼</p>
           <section className="content-body">
-            <p>
+            <p className="body-text">
               Hey all - welcome to the beginning of the Chili Token Community. We
               wanted to provide a quick explainer on what $CHILI is, what you can
               do with it, and most importantly how to claim it.
             </p>
-            <h3>What is Chili?</h3>
-            <p>
+            <h4 className="title is-4">What is Chili?</h4>
+            <p className="body-text">
               $Chili is an experimental new community token aimed at aligning
               current and future cartel communities to kickstart collaboration. In
               plain English, it’s a new community that seeks to reward
@@ -26,8 +27,8 @@ const About = () => (
               <br />
               <b>It’s the meta of the meta of the meta if you will.</b>
             </p>
-            <h3>What to do with $CHILI ?</h3>
-            <p>
+            <h4 className="title is-4">What to do with $CHILI ?</h4>
+            <p className="body-text">
               Great question! We’ve built $CHILI to be an open platform and
               community driven effort that allows the coolest ideas to emerge and
               be built. Once you receive your $CHILI, the first step is to stake
@@ -39,8 +40,8 @@ const About = () => (
               members come forward with new ideas, usages, and partnerships we can
               make using the $CHILI token.{` `}
             </p>
-            <h3>Claim and Stake it ?</h3>
-            <p>
+            <h4 className="title is-4">Claim and Stake it ?</h4>
+            <p className="body-text">
               We’re pretty excited about our claiming process using the
               Collab.Land Bot. All claiming will be done directly from the
               MetaCartel Discord Server in the “👉start-here” channel. Once you
@@ -53,8 +54,8 @@ const About = () => (
               fees. Once you stake, sit back and enjoy a spicy margarita as you
               earn your rChili.
             </p>
-            <h3>New CHILI Farms @ CHILIKITCHEN 🔥</h3>
-            <p>
+            <h4 className="title is-4">New CHILI Farms @ CHILIKITCHEN 🔥</h4>
+            <p className="body-text">
               It’s time to get cooking! Now everything CHILI is hosted together on
               a fresh new site. We moved the existing “Roasted CHILI” farm here,
               and added a new Liquditiy Provider Farm! Eventually we’ll have NFTs
@@ -73,7 +74,7 @@ const About = () => (
               back.
             </p>
 
-            <p>
+            <p className="body-text">
               {` `}
               And that’s it! We’re pumped to see what comes from this new social
               community token experiment, and even more excited to see what you
@@ -83,6 +84,7 @@ const About = () => (
             <p>Welcome to the Chili Community.</p>
           </section>
         </div>
+      </div>
     </div>
   </Layout>
 )
