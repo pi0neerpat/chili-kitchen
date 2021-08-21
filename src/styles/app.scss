@@ -74,7 +74,8 @@ html, body {
 
 .about-page {
   p {
-    color: #aaa;
+    color: #555555;
+    font-size: 17px;
     padding-bottom: 50px;
   }
 }
@@ -104,10 +105,6 @@ html, body {
   max-width: 90vw;
   margin: 0 auto;
   background: none;
-
-  .site-logo {
-    background-color: #F8FAFC;
-  }
 }
 
 .recipe-steps-container {

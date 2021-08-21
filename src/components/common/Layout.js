@@ -92,8 +92,8 @@ const DefaultLayout = ({ children, bodyClass, isHome }) => {
           <Link to="/">{site.title}</Link>
           <a href="https://metacartel.org">MetaCartel.org</a>
         </footer>
-      </div >
-    </div >
+      </div>
+    </div>
   )
 }
 
